@@ -1,0 +1,28 @@
+#include "SYS_TICK_interface.h"
+#include "LED.h"
+
+// Callback function for SysTick interrupt
+void Hesham_Callback(void) {
+    // Toggle the LED on Port F, Pin 1
+    LED_Toggle('F', Pin1); // Pin1 corresponds to bit 1
+}
+
+int main(void) {
+    // Initialize the LED on Port F, Pin1
+    LED_Init('F', Pin1);
+    
+    // Initialize the LED on Port F, Pin2
+    LED_Init('F', Pin2);
+
+    // Initialize SysTick with interrupt mode and 1-second interval
+    // Using a 16 MHz clock, 1 second corresponds to 16,000,000 cycles
+    SysTick_InitInterrupt(16000000, Hesham_Callback);
+
+    // Main loop
+    while (1) {
+      // Infinite loop; SysTick interrupt will handle the LED toggling
+      // Toggle the LED on Port F, Pin 1
+      LED_Toggle('F', Pin2); // Pin1 corresponds to bit 1
+      for(int i = 0; i < 500000; i++){}
+    }
+}

@@ -2845,10 +2845,22 @@
         <name>$PROJ_DIR$\..\SYS_TICK\BIT_WISE_OPS.h</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\BUZZER.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\BUZZER.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\..\SYS_TICK\DIO.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\SYS_TICK\DIO.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\DOOR.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\DOOR.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\SYS_TICK\LED.c</name>
@@ -2858,6 +2870,12 @@
     </file>
     <file>
         <name>$PROJ_DIR$\main.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\RELAY.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\RELAY.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\SYS_TICK\startup_ewarm.c</name>
