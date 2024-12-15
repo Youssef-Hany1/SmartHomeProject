@@ -1,7 +1,9 @@
-#include <stdint.h>
-#include "tm4c123gh6pm.h" // Ensure this header matches your MCU
+#include "STD_TYPES.h"
+#include "BIT_WISE_OPS.h"
+#include "DIO.h"
+#include "tm4c123gh6pm.h"
+#include "TEMP_SENSOR.h"
 
-#define TEMPERATURE_THRESHOLD 30 // Temperature threshold in Celsius
 static void (*TEMP_Callback) (Vfloat32) = 0;
 
 // Function to initialize ADC for temperature sensor

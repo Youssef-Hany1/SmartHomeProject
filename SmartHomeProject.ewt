@@ -2857,10 +2857,10 @@
         <name>$PROJ_DIR$\..\SYS_TICK\DIO.h</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\DOOR.c</name>
+        <name>$PROJ_DIR$\DOOR.h</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\DOOR.h</name>
+        <name>$PROJ_DIR$\DOOR_SWITCH_LAMP.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\SYS_TICK\LED.c</name>
@@ -2884,12 +2884,27 @@
         <name>$PROJ_DIR$\..\SYS_TICK\STD_TYPES.h</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\SWITCH_LAMP.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_interface.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\TEMP_SENSOR.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\TEMP_SENSOR.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\..\SYS_TICK\tm4c123gh6pm.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\UART.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\UART.h</name>
     </file>
 </project>

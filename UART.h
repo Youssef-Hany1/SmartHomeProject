@@ -1,0 +1,12 @@
+#ifndef UART_H
+#define UART_H
+
+#include "STD_TYPES.h"
+#include "tm4c123gh6pm.h"
+
+// Function Prototypes
+void UART0_Init(void (*callback)(void));
+void UART0_TransmitChar(uint8 c);
+void UART0_TransmitString(const uint8 *str);
+
+#endif

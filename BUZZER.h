@@ -2,6 +2,7 @@
 #define BUZZER_H
 
 #include "tm4c123gh6pm.h"
+#include "STD_TYPES.h"
 #include "DIO.h"
 
 #define buzzer_pin Pin7

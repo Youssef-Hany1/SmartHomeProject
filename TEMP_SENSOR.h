@@ -3,6 +3,8 @@
 
 #include "STD_TYPES.h"
 
-void ADC_Init(void (*callback)(void));
+#define TEMPERATURE_THRESHOLD 40 // Temperature threshold in Celsius
+
+void ADC_Init(void (*callback)(Vfloat32));
 
 #endif

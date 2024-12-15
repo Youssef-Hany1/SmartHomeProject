@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.1.308/W64 for ARM                  11/Dec/2024  02:16:38
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  15/Dec/2024  16:02:17
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
@@ -23,7 +23,7 @@
 #        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\DIO.o"
 #        "C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams
 #        University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to
-#        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\DOOR.o"
+#        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\DOOR_SWITCH_LAMP.o"
 #        "C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams
 #        University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to
 #        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\LED.o"
@@ -38,13 +38,16 @@
 #        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\startup_ewarm.o"
 #        "C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams
 #        University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to
-#        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\SWITCH.o"
+#        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\SYS_TICK_program.o"
 #        "C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams
 #        University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to
-#        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\SYS_TICK_program.o"
-#        --no_out_extension -o "C:\Users\Asus\OneDrive - Faculty of Engineering
-#        Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro
-#        to ES\ARM_Workspace\SmartHomeProject\Debug\Exe\SmartHomeProject.out"
+#        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\TEMP_SENSOR.o"
+#        "C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams
+#        University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to
+#        ES\ARM_Workspace\SmartHomeProject\Debug\Obj\UART.o" --no_out_extension
+#        -o "C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams
+#        University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to
+#        ES\ARM_Workspace\SmartHomeProject\Debug\Exe\SmartHomeProject.out"
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map "C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams
 #        University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to
@@ -93,41 +96,51 @@ do not initialize { rw section .noinit };
   .intvec          const            0x0  0x26c  startup_ewarm.o [1]
                                 - 0x26c  0x26c
 
-"P1":                                    0x3b4
-  .text            ro code        0x26c  0x16c  DIO.o [1]
-  .text            ro code        0x3d8   0x94  DOOR.o [1]
-  .text            ro code        0x46c   0x4c  LED.o [1]
-  .text            ro code        0x4b8   0x38  main.o [1]
-  .text            ro code        0x4f0   0x38  zero_init3.o [4]
-  .text            ro code        0x528   0x28  data_init.o [4]
-  .text            ro code        0x550   0x22  fpinit_M.o [3]
-  .iar.init_table  const          0x574   0x10  - Linker created -
-  .text            ro code        0x584   0x1e  startup_ewarm.o [1]
-  .text            ro code        0x5a4   0x1c  cstartup_M.o [4]
-  .text            ro code        0x5c0   0x1e  cmain.o [4]
-  .text            ro code        0x5de    0x4  low_level_init.o [2]
-  .text            ro code        0x5e2    0x4  exit.o [2]
-  .text            ro code        0x5e8    0xa  cexit.o [4]
-  .text            ro code        0x5f4   0x14  exit.o [5]
-  .text            ro code        0x608   0x18  SYS_TICK_program.o [1]
-  .rodata          const          0x620    0x0  zero_init3.o [4]
-                                - 0x620  0x3b4
+"P1":                                    0xc38
+  .text            ro code        0x26c  0x246  DblDiv.o [3]
+  .text            ro code        0x4b4  0x1aa  DblMul.o [3]
+  .text            ro code        0x660  0x16c  DIO.o [1]
+  .text            ro code        0x7cc  0x13c  UART.o [1]
+  .text            ro code        0x908  0x12c  main.o [1]
+  .text            ro code        0xa34   0x6a  LED.o [1]
+  .text            ro code        0xaa0  0x128  DOOR_SWITCH_LAMP.o [1]
+  .text            ro code        0xbc8  0x128  TEMP_SENSOR.o [1]
+  .text            ro code        0xcf0   0x1c  U32ToDbl.o [3]
+  .text            ro code        0xd0c   0x68  DblToFlt.o [3]
+  .text            ro code        0xd74   0x38  zero_init3.o [4]
+  .text            ro code        0xdac   0x28  data_init.o [4]
+  .text            ro code        0xdd4   0x22  fpinit_M.o [3]
+  .iar.init_table  const          0xdf8   0x10  - Linker created -
+  .text            ro code        0xe08   0x1e  startup_ewarm.o [1]
+  .text            ro code        0xe28   0x1c  cstartup_M.o [4]
+  .text            ro code        0xe44   0x1e  cmain.o [4]
+  .text            ro code        0xe62    0x4  low_level_init.o [2]
+  .text            ro code        0xe66    0x4  exit.o [2]
+  .text            ro code        0xe6c    0xa  cexit.o [4]
+  .text            ro code        0xe78   0x14  exit.o [5]
+  .text            ro code        0xe8c   0x18  SYS_TICK_program.o [1]
+  .rodata          const          0xea4    0x0  zero_init3.o [4]
+                                - 0xea4  0xc38
 
-"P2", part 1 of 2:                         0x8
-  .bss             zero     0x2000'0000    0x4  DOOR.o [1]
-  .bss             zero     0x2000'0004    0x4  SYS_TICK_program.o [1]
-                          - 0x2000'0008    0x8
+"P2", part 1 of 2:                        0x18
+  .bss             zero     0x2000'0000    0x4  DOOR_SWITCH_LAMP.o [1]
+  .bss             zero     0x2000'0004    0x4  DOOR_SWITCH_LAMP.o [1]
+  .bss             zero     0x2000'0008    0x4  SYS_TICK_program.o [1]
+  .bss             zero     0x2000'000c    0x4  TEMP_SENSOR.o [1]
+  .bss             zero     0x2000'0010    0x4  UART.o [1]
+  .bss             zero     0x2000'0014    0x1  main.o [1]
+                          - 0x2000'0015   0x15
 
 "P2", part 2 of 2:                       0x200
-  .noinit          uninit   0x2000'0008  0x200  startup_ewarm.o [1]
-                          - 0x2000'0208  0x200
+  .noinit          uninit   0x2000'0018  0x200  startup_ewarm.o [1]
+                          - 0x2000'0218  0x200
 
 Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x620     0x3'ffff  0x3'f9e0
-  0x2000'0208  0x2000'7fff    0x7df8
+        0xea4     0x3'ffff  0x3'f15c
+  0x2000'0218  0x2000'7fff    0x7de8
 
 
 *******************************************************************************
@@ -137,8 +150,8 @@ Unused ranges:
           Address      Size
           -------      ----
 Zero (__iar_zero_init3)
-    1 destination range, total size 0x8:
-          0x2000'0000   0x8
+    1 destination range, total size 0x15:
+          0x2000'0000  0x15
 
 
 
@@ -154,13 +167,15 @@ command line/config:
 
 C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\Debug\Obj: [1]
     DIO.o                   364
-    DOOR.o                  148                 4
-    LED.o                    76
+    DOOR_SWITCH_LAMP.o      296                 8
+    LED.o                   106
     SYS_TICK_program.o       24                 4
-    main.o                   56
+    TEMP_SENSOR.o           296                 4
+    UART.o                  316                 4
+    main.o                  300                 1
     startup_ewarm.o          30      620      512
     ---------------------------------------------
-    Total:                  698      620      520
+    Total:                1'732      620      533
 
 dl7M_tln.a: [2]
     exit.o                    4
@@ -169,9 +184,13 @@ dl7M_tln.a: [2]
     Total:                    8
 
 m7M_tls.a: [3]
+    DblDiv.o                582
+    DblMul.o                426
+    DblToFlt.o              104
+    U32ToDbl.o               28
     fpinit_M.o               34
     ---------------------------------------------
-    Total:                   34
+    Total:                1'174
 
 rt7M_tl.a: [4]
     cexit.o                  10
@@ -187,10 +206,10 @@ shb_l.a: [5]
     ---------------------------------------------
     Total:                   20
 
-    Gaps                      6        2
+    Gaps                     12        2
     Linker created                    16
 -------------------------------------------------
-    Grand Total:            930      638      520
+    Grand Total:          3'110      638      533
 
 
 *******************************************************************************
@@ -199,40 +218,58 @@ shb_l.a: [5]
 
 Entry                       Address   Size  Type      Object
 -----                       -------   ----  ----      ------
-.iar.init_table$$Base         0x574          --   Gb  - Linker created -
-.iar.init_table$$Limit        0x584          --   Gb  - Linker created -
-?main                         0x5c1         Code  Gb  cmain.o [4]
-DOOR_Callback           0x2000'0000    0x4  Data  Lc  DOOR.o [1]
-DOOR_Callback                 0x4b9   0x1e  Code  Gb  main.o [1]
-DOOR_Init                     0x3d9   0x50  Code  Gb  DOOR.o [1]
-FaultISR                      0x59f    0x2  Code  Lc  startup_ewarm.o [1]
-GPIOF_Handler                 0x429   0x26  Code  Gb  DOOR.o [1]
-IntDefaultHandler             0x5a1    0x2  Code  Lc  startup_ewarm.o [1]
-LED_Init                      0x46d    0xe  Code  Gb  LED.o [1]
-LED_Off                       0x499   0x20  Code  Gb  LED.o [1]
-LED_On                        0x47b   0x1e  Code  Gb  LED.o [1]
-NmiSR                         0x59d    0x2  Code  Lc  startup_ewarm.o [1]
-Region$$Table$$Base           0x574          --   Gb  - Linker created -
-Region$$Table$$Limit          0x584          --   Gb  - Linker created -
-ResetISR                      0x585   0x14  Code  Gb  startup_ewarm.o [1]
-SysTick_Callback        0x2000'0004    0x4  Data  Lc  SYS_TICK_program.o [1]
-SysTick_Handler               0x609   0x12  Code  Gb  SYS_TICK_program.o [1]
-__cmain                       0x5c1         Code  Gb  cmain.o [4]
-__exit                        0x5f5   0x14  Code  Gb  exit.o [5]
-__iar_data_init3              0x529   0x28  Code  Gb  data_init.o [4]
-__iar_init_vfp                0x551         Code  Gb  fpinit_M.o [3]
-__iar_program_start           0x5a5         Code  Gb  cstartup_M.o [4]
-__iar_zero_init3              0x4f1   0x38  Code  Gb  zero_init3.o [4]
-__low_level_init              0x5df    0x4  Code  Gb  low_level_init.o [2]
+.iar.init_table$$Base         0xdf8          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xe08          --   Gb  - Linker created -
+?main                         0xe45         Code  Gb  cmain.o [4]
+ADC0Seq3_Handler              0xc5d   0x4c  Code  Gb  TEMP_SENSOR.o [1]
+ADC_Init                      0xbc9   0x92  Code  Gb  TEMP_SENSOR.o [1]
+DOOR_Callback           0x2000'0004    0x4  Data  Lc  DOOR_SWITCH_LAMP.o [1]
+DOOR_Callback                 0x909   0x1e  Code  Gb  main.o [1]
+DOOR_Init                     0xb03   0x50  Code  Gb  DOOR_SWITCH_LAMP.o [1]
+FaultISR                      0xe23    0x2  Code  Lc  startup_ewarm.o [1]
+GPIOF_Handler                 0xb53   0x48  Code  Gb  DOOR_SWITCH_LAMP.o [1]
+IntDefaultHandler             0xe25    0x2  Code  Lc  startup_ewarm.o [1]
+LED_Init                      0xa35    0xe  Code  Gb  LED.o [1]
+LED_Off                       0xa61   0x20  Code  Gb  LED.o [1]
+LED_On                        0xa43   0x1e  Code  Gb  LED.o [1]
+LED_Toggle                    0xa81   0x1e  Code  Gb  LED.o [1]
+NmiSR                         0xe21    0x2  Code  Lc  startup_ewarm.o [1]
+Region$$Table$$Base           0xdf8          --   Gb  - Linker created -
+Region$$Table$$Limit          0xe08          --   Gb  - Linker created -
+ResetISR                      0xe09   0x14  Code  Gb  startup_ewarm.o [1]
+SWITCH_LAMP_Callback    0x2000'0000    0x4  Data  Lc  DOOR_SWITCH_LAMP.o [1]
+SWITCH_LAMP_Callback          0x931   0x1e  Code  Gb  main.o [1]
+SWITCH_LAMP_Init              0xaa1   0x62  Code  Gb  DOOR_SWITCH_LAMP.o [1]
+SysTick_Callback        0x2000'0008    0x4  Data  Lc  SYS_TICK_program.o [1]
+SysTick_Handler               0xe8d   0x12  Code  Gb  SYS_TICK_program.o [1]
+TEMP_Callback           0x2000'000c    0x4  Data  Lc  TEMP_SENSOR.o [1]
+Temperature_Callback          0x951   0x34  Code  Gb  main.o [1]
+UART0_Callback                0x927    0xa  Code  Gb  main.o [1]
+UART0_Callback          0x2000'0010    0x4  Data  Lc  UART.o [1]
+UART0_Handler                 0x891   0x26  Code  Gb  UART.o [1]
+UART0_Init                    0x7cd   0xb4  Code  Gb  UART.o [1]
+UART0_TransmitChar            0x881   0x10  Code  Gb  UART.o [1]
+__aeabi_d2f                   0xd0d         Code  Gb  DblToFlt.o [3]
+__aeabi_ddiv                  0x26d         Code  Gb  DblDiv.o [3]
+__aeabi_dmul                  0x4b5         Code  Gb  DblMul.o [3]
+__aeabi_ui2d                  0xcf1         Code  Gb  U32ToDbl.o [3]
+__cmain                       0xe45         Code  Gb  cmain.o [4]
+__exit                        0xe79   0x14  Code  Gb  exit.o [5]
+__iar_data_init3              0xdad   0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp                0xdd5         Code  Gb  fpinit_M.o [3]
+__iar_program_start           0xe29         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3              0xd75   0x38  Code  Gb  zero_init3.o [4]
+__low_level_init              0xe63    0x4  Code  Gb  low_level_init.o [2]
 __vector_table                  0x0  0x26c  Data  Gb  startup_ewarm.o [1]
-_call_main                    0x5cd         Code  Gb  cmain.o [4]
-_exit                         0x5e9         Code  Gb  cexit.o [4]
-dio_init                      0x26d   0xce  Code  Gb  DIO.o [1]
-dio_readport                  0x33b   0x42  Code  Gb  DIO.o [1]
-dio_writeport                 0x37d   0x40  Code  Gb  DIO.o [1]
-exit                          0x5e3    0x4  Code  Gb  exit.o [2]
-main                          0x4d7   0x12  Code  Gb  main.o [1]
-pui32Stack              0x2000'0008  0x200  Data  Lc  startup_ewarm.o [1]
+_call_main                    0xe51         Code  Gb  cmain.o [4]
+_exit                         0xe6d         Code  Gb  cexit.o [4]
+dio_init                      0x661   0xce  Code  Gb  DIO.o [1]
+dio_readport                  0x72f   0x42  Code  Gb  DIO.o [1]
+dio_writeport                 0x771   0x40  Code  Gb  DIO.o [1]
+exit                          0xe67    0x4  Code  Gb  exit.o [2]
+main                          0x985   0x8e  Code  Gb  main.o [1]
+pui32Stack              0x2000'0018  0x200  Data  Lc  startup_ewarm.o [1]
+received_char           0x2000'0014    0x1  Data  Gb  main.o [1]
 
 
 [1] = C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\Debug\Obj
@@ -241,9 +278,9 @@ pui32Stack              0x2000'0008  0x200  Data  Lc  startup_ewarm.o [1]
 [4] = rt7M_tl.a
 [5] = shb_l.a
 
-  930 bytes of readonly  code memory
-  638 bytes of readonly  data memory
-  520 bytes of readwrite data memory
+  3'110 bytes of readonly  code memory
+    638 bytes of readonly  data memory
+    533 bytes of readwrite data memory
 
 Errors: none
 Warnings: none
