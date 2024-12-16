@@ -4,6 +4,12 @@
 #include "STD_TYPES.h"
 #include "DIO.h"
 
+#define RELAY1_PORT     'F'
+#define RELAY1_PIN      Pin1
+
+#define RELAY2_PORT     'F'
+#define RELAY2_PIN      Pin2
+
 // Relay States
 #define RELAY_ON  1
 #define RELAY_OFF 0

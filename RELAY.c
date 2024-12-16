@@ -1,4 +1,5 @@
 #include "RELAY.h"
+#include "DIO.h"
 #include "STD_TYPES.h"
 
 // Initialize the relay pins

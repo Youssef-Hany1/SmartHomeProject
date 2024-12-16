@@ -2842,6 +2842,12 @@
         </settings>
     </configuration>
     <file>
+        <name>$PROJ_DIR$\ADC.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\ADC.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\..\SYS_TICK\BIT_WISE_OPS.h</name>
     </file>
     <file>
@@ -2891,12 +2897,6 @@
     </file>
     <file>
         <name>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\TEMP_SENSOR.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\TEMP_SENSOR.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\..\SYS_TICK\tm4c123gh6pm.h</name>

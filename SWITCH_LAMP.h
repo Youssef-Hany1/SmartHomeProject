@@ -5,7 +5,7 @@
 #include "tm4c123gh6pm.h"
 #include "DIO.h"
 
-#define SWITCH_pin Pin0
+#define SWITCH_pin Pin4
 #define SWITCH_port 'F'
 
 void SWITCH_LAMP_Init (void (*callback)(void));

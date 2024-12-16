@@ -1,75 +1,48 @@
-#include "STD_TYPES.h"
-#include "BIT_WISE_OPS.h"
-#include "DIO.h"
+#include "ADC.h"
+#include "..\GPIO\GPIO.h"
 #include "tm4c123gh6pm.h"
-#include "TEMP_SENSOR.h"
 
-static void (*TEMP_Callback) (Vfloat32) = 0;
+void ADC1_Init()
+{
+    /* Using PD1 -> AIN6 */
 
-// Function to initialize ADC for temperature sensor
-void ADC_Init(void (*callback)(Vfloat32)) {
-    // Enable the clock for ADC0 module
-    SYSCTL_RCGCADC_R |= 0x01;
-    
-    // Enable the clock for GPIO Port E (assuming temperature sensor is connected to PE3)
-    SYSCTL_RCGCGPIO_R |= 0x10;
-    while ((SYSCTL_PRGPIO_R & 0x10) == 0) {}
+    // 1. Enable the ADC clock using the RCGCADC register
+    SYSCTL_RCGCADC_R |= (1 << 1);
+    volatile int delay = 0; // Allow stabilization time
+    delay++;
 
-    // Configure PE3 as an analog input
-    SET_BIT(GPIO_PORTE_AFSEL_R,Pin3);
-    CLR_BIT(GPIO_PORTE_DEN_R,Pin3);
-    SET_BIT(GPIO_PORTE_AMSEL_R,Pin3);
+    // 2. Enable the clock to the GPIO module for PORTD
+    SYSCTL_RCGCGPIO_R |= (1 << 3);
 
-    // Disable sample sequencer 3 during configuration
-    CLR_BIT(ADC0_ACTSS_R,Pin3);
+    // 3. Configure PD1 as an analog input
+    GPIO_PORTD_AFSEL_R |= (1 << 1);    // Enable alternate function for PD1
+    GPIO_PORTD_DEN_R &= ~(1 << 1);     // Disable digital function for PD1
+    GPIO_PORTD_AMSEL_R |= (1 << 1);    // Enable analog function for PD1
 
-    // Configure ADC0 sequencer 3 for a single sample, triggered by the processor
-    ADC0_EMUX_R = (ADC0_EMUX_R & ~0xF000) | 0x0000; // Processor trigger
-    ADC0_SSMUX3_R = 0;                             // Select AIN0 (PE3)
-    ADC0_SSCTL3_R = 0x06;                          // Single-ended, end of sequence
+    // 4. Disable sample sequencer 3 during configuration
+    ADC1_ACTSS_R &= ~(1 << 3);
 
-    // Enable interrupt for sequencer 3
-    ADC0_IM_R |= 0x08;
+    // 5. Configure the trigger event for sample sequencer 3
+    ADC1_EMUX_R = (0xF << 12); // Always trigger (change if required)
 
-    // Enable sequencer 3
-    ADC0_ACTSS_R |= 0x08;
+    // 6. Configure input source for sample sequencer 3
+    ADC1_SSMUX3_R = 6; // AIN6
 
-    // Enable ADC0 interrupt in NVIC
-    NVIC_EN0_R |= 1 << 17; // Interrupt number 17 for ADC0
-    
-    TEMP_Callback= callback;
+    // 7. Configure sample control: end of sequence and interrupt enable
+    ADC1_SSCTL3_R = (1 << 1) | (1 << 2); // Enable END and IE bits
+
+    // 8. Disable interrupts for now (unless required)
+    ADC1_IM_R &= ~(1 << 3);
+
+    // 9. Enable sample sequencer 3
+    ADC1_ACTSS_R |= (1 << 3);
 }
 
-// ADC0 Sequencer 3 interrupt handler
-void ADC0Seq3_Handler(void) {
-  if(TEMP_Callback!= 0){
-    uint32 adcValue;
-    Vfloat32 voltage, temperature;
-
-    // Clear the interrupt flag
-    ADC0_ISC_R = 0x08;
-
-    // Read the ADC value from the FIFO
-    adcValue = ADC0_SSFIFO3_R;
-
-    // Convert the ADC value to a temperature
-    voltage = (adcValue * 3.3) / 4096; // Calculate the input voltage
-    temperature = voltage * 100;      // Convert voltage to temperature (10 mV per degree)
-
-    // Check if the temperature exceeds the threshold
-    TEMP_Callback(temperature);
-  }
+uint32_t ADC1_ReadValue(void)
+{
+    ADC1_PSSI_R |= (1 << 3);           // Start SS3 Conversion
+    while ((ADC1_RIS_R & (1 << 3)) == 0); // Wait for conversion to complete
+    uint32_t ADC_Value = ADC1_SSFIFO3_R; // Read the ADC value
+    ADC1_ISC_R = (1 << 3);             // Clear the interrupt flag
+    return ADC_Value;                  // Return the result
 }
-
-//ADCProcessorTrigger(ADC0_BASE, 3);
-
-/*
-// User-defined callback function
-void Temperature_Callback(Vfloat32 temperature) {
-    if (temperature > TEMPERATURE_THRESHOLD) {
-        GPIO_PORTF_DATA_R |= 0x02; // Turn on the Red LED
-    } else {
-        GPIO_PORTF_DATA_R &= ~0x02; // Turn off the Red LED
-    }
-}
-*/

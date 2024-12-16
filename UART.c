@@ -28,12 +28,12 @@ void UART0_Init(void (*callback)(void)) {
     UART0_Callback = callback;
 }
 
-void UART0_TransmitChar(uint8 c) {
+void UART0_TransmitChar(char c) {
     while ((UART0_FR_R & (1 << 5)) != 0); // Wait until the transmit FIFO is not full
     UART0_DR_R = c; // Write the character to the data register
 }
 
-void UART0_TransmitString(const uint8 *str) {
+void UART0_TransmitString(const char *str) {
     while (*str) {
         UART0_TransmitChar(*str++);
     }

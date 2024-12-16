@@ -6,7 +6,7 @@
 
 // Function Prototypes
 void UART0_Init(void (*callback)(void));
-void UART0_TransmitChar(uint8 c);
-void UART0_TransmitString(const uint8 *str);
+void UART0_TransmitChar(char c);
+void UART0_TransmitString(const char *str);
 
 #endif
