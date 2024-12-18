@@ -1,7 +1,7 @@
 #ifndef DIO_H
 #define DIO_H
 
-#include <stdint.h>
+#include "STD_TYPES.h"
 #include "tm4c123gh6pm.h"
 
 // Define direction constants for Input and Output
@@ -27,18 +27,18 @@
 #define GPIO_PORTF_BASE  0x40025000
 
 // Define the necessary registers for each port
-#define GPIO_PORT_DIR_R(port_base)       (*(volatile uint32_t *)(port_base + 0x400))  // Direction register
-#define GPIO_PORT_DEN_R(port_base)       (*(volatile uint32_t *)(port_base + 0x51C))  // Digital enable register
-#define GPIO_PORT_PUR_R(port_base)       (*(volatile uint32_t *)(port_base + 0x510))  // Pull-up resistor register
-#define GPIO_PORT_LOCK_R(port_base)      (*(volatile uint32_t *)(port_base + 0x520))  // Lock register
-#define GPIO_PORT_CR_R(port_base)        (*(volatile uint32_t *)(port_base + 0x524))  // Commit register
-#define GPIO_PORT_DATA_BITS_R(port_base) ((volatile uint32_t *)(port_base))           // Data bits register
+#define GPIO_PORT_DIR_R(port_base)       (*(volatile uint32 *)(port_base + 0x400))  // Direction register
+#define GPIO_PORT_DEN_R(port_base)       (*(volatile uint32 *)(port_base + 0x51C))  // Digital enable register
+#define GPIO_PORT_PUR_R(port_base)       (*(volatile uint32 *)(port_base + 0x510))  // Pull-up resistor register
+#define GPIO_PORT_LOCK_R(port_base)      (*(volatile uint32 *)(port_base + 0x520))  // Lock register
+#define GPIO_PORT_CR_R(port_base)        (*(volatile uint32 *)(port_base + 0x524))  // Commit register
+#define GPIO_PORT_DATA_BITS_R(port_base) ((volatile uint32 *)(port_base))           // Data bits register
 
 // Function prototypes
-void dio_init(char port, uint8_t pins, uint8_t direction);
-uint8_t dio_readpin(char port, uint8_t pin);
-uint8_t dio_readport(char port);
-void dio_writepin(char port, uint8_t pin, uint8_t value);
-void dio_writeport(char port, uint8_t value);
+void dio_init(char port, uint8 pins, uint8 direction);
+uint8 dio_readpin(char port, uint8 pin);
+uint8 dio_readport(char port);
+void dio_writepin(char port, uint8 pin, uint8 value);
+void dio_writeport(char port, uint8 value);
 
 #endif // DIO_H

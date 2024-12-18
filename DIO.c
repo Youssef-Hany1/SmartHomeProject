@@ -1,9 +1,10 @@
 #include "DIO.h"
 #include "BIT_WISE_OPS.h"
+#include "STD_TYPES.h"
 
 // Function to count trailing zeros
-uint8_t ctz(uint32_t value) {
-    uint8_t count = 0;
+uint8 ctz(uint32 value) {
+    uint8 count = 0;
     if (value == 0) return 32; // Special case: if the value is 0, return 32
     while ((value & 1) == 0) { // Check if the least significant bit is 0
         count++;
@@ -13,8 +14,8 @@ uint8_t ctz(uint32_t value) {
 }
 
 // Function to initialize a port and pins
-void dio_init(char port, uint8_t pins, uint8_t direction) {
-    uint32_t port_base = 0;
+void dio_init(char port, uint8 pins, uint8 direction) {
+    uint32 port_base = 0;
 
     // Select base address based on port letter
     switch (port) {
@@ -52,8 +53,8 @@ void dio_init(char port, uint8_t pins, uint8_t direction) {
 }
 
 // Function to read a specific pin
-uint8_t dio_readpin(char port, uint8_t pin) {
-    uint32_t port_base = 0;
+uint8 dio_readpin(char port, uint8 pin) {
+    uint32 port_base = 0;
 
     // Select base address based on port letter
     switch (port) {
@@ -67,12 +68,12 @@ uint8_t dio_readpin(char port, uint8_t pin) {
     }
 
     // Read the pin's value
-    return GET_BIT(*(volatile uint32_t *)(port_base + 0x3FC), ctz(pin));
+    return GET_BIT(*(volatile uint32 *)(port_base + 0x3FC), ctz(pin));
 }
 
 // Function to read the entire port
-uint8_t dio_readport(char port) {
-    uint32_t port_base = 0;
+uint8 dio_readport(char port) {
+    uint32 port_base = 0;
 
     // Select base address based on port letter
     switch (port) {
@@ -86,12 +87,12 @@ uint8_t dio_readport(char port) {
     }
 
     // Read the entire port's value
-    return (uint8_t)(*(volatile uint32_t *)(port_base + 0x3FC));
+    return (uint8)(*(volatile uint32 *)(port_base + 0x3FC));
 }
 
 // Function to write to a specific pin
-void dio_writepin(char port, uint8_t pin, uint8_t value) {
-    uint32_t port_base = 0;
+void dio_writepin(char port, uint8 pin, uint8 value) {
+    uint32 port_base = 0;
 
     // Select base address based on port letter
     switch (port) {
@@ -106,16 +107,16 @@ void dio_writepin(char port, uint8_t pin, uint8_t value) {
 
     // Write value to the pin
     if (value) {
-        SET_BIT(*(volatile uint32_t *)(port_base + (1U << (2 + ctz(pin)))), ctz(pin));
+        SET_BIT(*(volatile uint32 *)(port_base + (1U << (2 + ctz(pin)))), ctz(pin));
     } else {
-        CLR_BIT(*(volatile uint32_t *)(port_base + (1U << (2 + ctz(pin)))), ctz(pin));
+        CLR_BIT(*(volatile uint32 *)(port_base + (1U << (2 + ctz(pin)))), ctz(pin));
     }
 }
 
 
 // Function to write to the entire port
-void dio_writeport(char port, uint8_t value) {
-    uint32_t port_base = 0;
+void dio_writeport(char port, uint8 value) {
+    uint32 port_base = 0;
 
     // Select base address based on port letter
     switch (port) {
@@ -129,5 +130,5 @@ void dio_writeport(char port, uint8_t value) {
     }
 
     // Write the entire port's value
-    *(volatile uint32_t *)(port_base + 0x3FC) = value;
+    *(volatile uint32 *)(port_base + 0x3FC) = value;
 }

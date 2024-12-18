@@ -2103,10 +2103,10 @@
         <name>$PROJ_DIR$\BUZZER.h</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\..\SYS_TICK\DIO.c</name>
+        <name>$PROJ_DIR$\DIO.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\..\SYS_TICK\DIO.h</name>
+        <name>$PROJ_DIR$\DIO.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\DOOR.h</name>
