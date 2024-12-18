@@ -4,13 +4,11 @@
 #include "DOOR.h"
 #include "SWITCH_LAMP.h"
 #include "BUZZER.h"
-#include "TEMP_SENSOR.h"
 #include "UART.h"
 #include "LED.h"
 #include "DIO.h"
 #include "tm4c123gh6pm.h"
 #include "ADC.h"
-#include <stdio.h>
 
 // Global Variables
 volatile uint8 received_char = 0;

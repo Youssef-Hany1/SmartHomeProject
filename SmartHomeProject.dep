@@ -250,7 +250,7 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 65 4 11 14 59 17 3 16 9 32 29 28 33 46 27 48 62 61 7 37 54</file>
+                    <file> 65 4 11 14 59 17 3 16 9 32 29 28 33 46 27 48 62 61 37 54</file>
                 </tool>
             </inputs>
         </file>
@@ -259,7 +259,7 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 42 15</file>
+                    <file> 15 42</file>
                 </tool>
             </outputs>
         </file>
