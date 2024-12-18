@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<TabPane fx:id="mainTabPane" xmlns:fx="http://javafx.com/fxml"
-         fx:controller="com.example.app.MainController">
-    <tabs>
-        <Tab text="Lamp &amp; Plug" closable="false">
-            <fx:include source="lamp_tab.fxml"/>
-        </Tab>
-        <Tab text="Door" closable="false">
-            <fx:include source="door_tab.fxml"/>
-        </Tab>
-        <Tab text="Temperature" closable="false">
-            <fx:include source="temperature_tab.fxml"/>
-        </Tab>
-    </tabs>
-</TabPane>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.app.MainController">
+    <top>
+        <Label text="Home Control System"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-padding: 10;"
+               BorderPane.alignment="center"/>
+    </top>
+
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Lamp &amp; Plug">
+                    <fx:include source="lamp_tab.fxml"/>
+                </Tab>
+                <Tab text="Door">
+                    <fx:include source="door_tab.fxml"/>
+                </Tab>
+                <Tab text="Temperature">
+                    <fx:include source="temperature_tab.fxml"/>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

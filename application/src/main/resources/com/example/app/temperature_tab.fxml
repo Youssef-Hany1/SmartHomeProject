@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+
 <AnchorPane fx:id="temperatureRoot" xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.app.TemperatureTabController">
     <children>
-        <VBox spacing="10" layoutX="20" layoutY="20">
-            <Label text="Temperature:"/>
-            <HBox spacing="10">
-                <Label fx:id="temperatureLabel" text="Unknown °C"/>
-                <ImageView fx:id="alarmImageView" />
+        <VBox spacing="15" layoutX="20" layoutY="20" prefWidth="600">
+            <Label text="Temperature Monitor" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Separator/>
+
+            <HBox spacing="20" alignment="center">
+                <VBox spacing="10">
+                    <Label text="Current Temperature:"/>
+                    <Label fx:id="temperatureLabel" text="Unknown °C"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                </VBox>
+                <ImageView fx:id="alarmImageView" fitWidth="200" fitHeight="200"/>
             </HBox>
         </VBox>
     </children>
