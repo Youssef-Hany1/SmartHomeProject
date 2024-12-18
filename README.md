@@ -17,6 +17,6 @@ This project demonstrates a mobile-based home automation system using the TM4C12
 - **Microcontroller:** TM4C123GH6PM  
 - **Programming Languages:** C (embedded systems), Java/Kotlin (Android)  
 - **Software Tools:** Code Composer Studio, Android Studio  
-- **Sensors and Components:** Magnetic switch, temperature sensor, relays  
+- **Sensors and Components:** Limit_switch, temperature sensor, relays  
 
 ---
