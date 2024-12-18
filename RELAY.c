@@ -9,9 +9,5 @@ void Relay_Init(char port, uint8 pin) {
 
 // Control the relay state (ON/OFF)
 void Relay_Control(char port, uint8 pin, uint8 state) {
-    if (state == RELAY_ON) {
-        dio_writepin(port, pin, RELAY_ON); // Activate relay
-    } else if (state == RELAY_OFF) {
-        dio_writepin(port, pin, RELAY_OFF); // Deactivate relay
-    }
+    dio_writepin(port, pin, RELAY_ON);
 }
