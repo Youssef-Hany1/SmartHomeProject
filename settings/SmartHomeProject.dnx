@@ -16,7 +16,7 @@
         <ShowSource>1</ShowSource>
     </Trace1>
     <DebugChecksum>
-        <Checksum>732308454</Checksum>
+        <Checksum>2957980734</Checksum>
     </DebugChecksum>
     <Disassembly>
         <InstrCount>0</InstrCount>
@@ -30,7 +30,7 @@
         <ShowArgs>0</ShowArgs>
     </CallStack>
     <LMIFTDIDriver>
-        <LMIFTDIserialNo>0E238ECC</LMIFTDIserialNo>
+        <LMIFTDIserialNo>MFG-TEST</LMIFTDIserialNo>
         <LMIFTDIfoundProbes />
     </LMIFTDIDriver>
     <DriverProfiling>
@@ -88,8 +88,7 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\main.c}.16.11" 0 0 1 "" 0 "" 0</Bp0>
-        <Count>1</Count>
+        <Count>0</Count>
     </Breakpoints2>
     <Aliases>
         <Count>0</Count>

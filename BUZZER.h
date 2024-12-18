@@ -11,7 +11,7 @@
 #define High 1
 #define Low 0
 
-void BUZZER_Init(char port, uint8 pin);
-void BUZZER_Control(char port, uint8 pin, uint8 value);
+void BUZZER_Init(void (*callback)(void));
+void BUZZER_Control(uint8 state);
 
 #endif

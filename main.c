@@ -19,6 +19,24 @@ volatile uint8 LAMP_STATUS = 0;
 volatile uint8 LAMP_SWITCH = 0;
 uint8 LAMP_UART = 0;
 
+// Callback function for Buzzer Systick interrupt
+void BUZZER_SYSTICK_Callback(void) {
+  static uint8 counter = 0;
+  if(counter == 2)
+  {
+    char temp[5] = "t_0#";
+    temp[2] = ADC1_ReadValue();
+    UART0_TransmitString(temp);
+    if(temp[2] > TEMPERATURE_THRESHOLD)
+      BUZZER_Control(High);
+    else
+      BUZZER_Control(Low);
+    counter = 0;
+  }else{
+    counter++;
+  }
+}
+
 // Callback function for Door interrupt
 void DOOR_Callback(void) {
   if (!(GPIO_PORTF_DATA_R & 0x01)) {
@@ -49,32 +67,17 @@ int main(void) {
     SWITCH_LAMP_Init(SWITCH_LAMP_Callback);
     ADC1_Init();
     UART0_Init(UART0_Callback);
-    BUZZER_Init(buzzer_port,buzzer_pin);
-    SysTick_Init(15999);
-    
-    uint32 temp = 0;
+    BUZZER_Init(BUZZER_SYSTICK_Callback);
     
     // Main loop
     while (1) {
-      temp = ADC1_ReadValue();
       
-      char buffer[10]; // Buffer to store the string
-      sprintf(buffer, "%lu", temp); // Convert temp to string
-      UART0_TransmitString(buffer); // Transmit the temperature value
-      
-      if(temp == TEMPERATURE_THRESHOLD){
-        BUZZER_Control(buzzer_port,buzzer_pin,High);
-        for(volatile int i=0;i<10;i++)
-          while(!SysTick_Is_Time_Out());
-        BUZZER_Control(buzzer_port,buzzer_pin,Low);
-      }
-  
       LAMP_STATUS = LAMP_UART^LAMP_SWITCH;
       if(LAMP_STATUS){
-        UART0_TransmitChar('1');
+        //UART0_TransmitChar('1');
         Relay_Control(RELAY1_PORT, RELAY1_PIN, RELAY_ON);
       }else{
-        UART0_TransmitChar('0');
+        //UART0_TransmitChar('0');
         Relay_Control(RELAY1_PORT, RELAY1_PIN, RELAY_OFF);
       }
       
