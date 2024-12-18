@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.1.308/W64 for ARM                  18/Dec/2024  18:22:57
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  18/Dec/2024  18:45:20
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
@@ -96,29 +96,29 @@ do not initialize { rw section .noinit };
   .intvec          const            0x0  0x26c  startup_ewarm.o [1]
                                 - 0x26c  0x26c
 
-"P1":                                    0x89c
+"P1":                                    0x880
   .text            ro code        0x26c  0x1b8  DIO.o [1]
   .text            ro code        0x424  0x180  DOOR_SWITCH_LAMP.o [1]
   .text            ro code        0x5a4  0x16c  main.o [1]
   .text            ro code        0x710   0xdc  ADC.o [1]
   .text            ro code        0x7ec  0x150  UART.o [1]
   .text            ro code        0x93c   0x34  BUZZER.o [1]
-  .text            ro code        0x970   0x36  RELAY.o [1]
-  .text            ro code        0x9a8   0x40  SYS_TICK_program.o [1]
-  .text            ro code        0x9e8   0x38  zero_init3.o [4]
-  .text            ro code        0xa20   0x28  data_init.o [4]
-  .text            ro code        0xa48   0x22  fpinit_M.o [3]
-  .iar.init_table  const          0xa6c   0x10  - Linker created -
-  .text            ro code        0xa7c   0x1e  startup_ewarm.o [1]
-  .text            ro code        0xa9c   0x1c  cstartup_M.o [4]
-  .text            ro code        0xab8   0x1e  cmain.o [4]
-  .text            ro code        0xad6    0x4  low_level_init.o [2]
-  .text            ro code        0xada    0x4  exit.o [2]
-  .text            ro code        0xae0    0xa  cexit.o [4]
-  .text            ro code        0xaec   0x14  exit.o [5]
-  .rodata          const          0xb00    0x8  main.o [1]
-  .rodata          const          0xb08    0x0  zero_init3.o [4]
-                                - 0xb08  0x89c
+  .text            ro code        0x970   0x1c  RELAY.o [1]
+  .text            ro code        0x98c   0x40  SYS_TICK_program.o [1]
+  .text            ro code        0x9cc   0x38  zero_init3.o [4]
+  .text            ro code        0xa04   0x28  data_init.o [4]
+  .text            ro code        0xa2c   0x22  fpinit_M.o [3]
+  .iar.init_table  const          0xa50   0x10  - Linker created -
+  .text            ro code        0xa60   0x1e  startup_ewarm.o [1]
+  .text            ro code        0xa80   0x1c  cstartup_M.o [4]
+  .text            ro code        0xa9c   0x1e  cmain.o [4]
+  .text            ro code        0xaba    0x4  low_level_init.o [2]
+  .text            ro code        0xabe    0x4  exit.o [2]
+  .text            ro code        0xac4    0xa  cexit.o [4]
+  .text            ro code        0xad0   0x14  exit.o [5]
+  .rodata          const          0xae4    0x8  main.o [1]
+  .rodata          const          0xaec    0x0  zero_init3.o [4]
+                                - 0xaec  0x880
 
 "P2", part 1 of 2:                        0x18
   .bss             zero     0x2000'0000    0x4  DOOR_SWITCH_LAMP.o [1]
@@ -140,7 +140,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0xb08     0x3'ffff  0x3'f4f8
+        0xaec     0x3'ffff  0x3'f514
   0x2000'0218  0x2000'7fff    0x7de8
 
 
@@ -171,13 +171,13 @@ C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COU
     BUZZER.o                 52
     DIO.o                   440
     DOOR_SWITCH_LAMP.o      384                 8
-    RELAY.o                  54
+    RELAY.o                  28
     SYS_TICK_program.o       64                 4
     UART.o                  336                 4
     main.o                  364        8        5
     startup_ewarm.o          30      620      512
     ---------------------------------------------
-    Total:                1'944      628      533
+    Total:                1'918      628      533
 
 dl7M_tln.a: [2]
     exit.o                    4
@@ -204,10 +204,10 @@ shb_l.a: [5]
     ---------------------------------------------
     Total:                   20
 
-    Gaps                      8        2
+    Gaps                      6        2
     Linker created                    16
 -------------------------------------------------
-    Grand Total:          2'178      646      533
+    Grand Total:          2'150      646      533
 
 
 *******************************************************************************
@@ -216,9 +216,9 @@ shb_l.a: [5]
 
 Entry                       Address   Size  Type      Object
 -----                       -------   ----  ----      ------
-.iar.init_table$$Base         0xa6c          --   Gb  - Linker created -
-.iar.init_table$$Limit        0xa7c          --   Gb  - Linker created -
-?main                         0xab9         Code  Gb  cmain.o [4]
+.iar.init_table$$Base         0xa50          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xa60          --   Gb  - Linker created -
+?main                         0xa9d         Code  Gb  cmain.o [4]
 ADC1_Init                     0x711   0x84  Code  Gb  ADC.o [1]
 ADC1_ReadValue                0x795   0x20  Code  Gb  ADC.o [1]
 BUZZER_Control                0x961   0x10  Code  Gb  BUZZER.o [1]
@@ -230,44 +230,44 @@ BUZZER_SYSTICK_Callback::counter
 DOOR_Callback           0x2000'0004    0x4  Data  Lc  DOOR_SWITCH_LAMP.o [1]
 DOOR_Callback                 0x5f3   0x1a  Code  Gb  main.o [1]
 DOOR_Init                     0x493   0x6e  Code  Gb  DOOR_SWITCH_LAMP.o [1]
-FaultISR                      0xa97    0x2  Code  Lc  startup_ewarm.o [1]
+FaultISR                      0xa7b    0x2  Code  Lc  startup_ewarm.o [1]
 GPIOF_Handler                 0x501   0x74  Code  Gb  DOOR_SWITCH_LAMP.o [1]
-IntDefaultHandler             0xa99    0x2  Code  Lc  startup_ewarm.o [1]
+IntDefaultHandler             0xa7d    0x2  Code  Lc  startup_ewarm.o [1]
 LAMP_STATUS             0x2000'0011    0x1  Data  Gb  main.o [1]
 LAMP_SWITCH             0x2000'0012    0x1  Data  Gb  main.o [1]
 LAMP_UART               0x2000'0013    0x1  Data  Gb  main.o [1]
-NmiSR                         0xa95    0x2  Code  Lc  startup_ewarm.o [1]
-Region$$Table$$Base           0xa6c          --   Gb  - Linker created -
-Region$$Table$$Limit          0xa7c          --   Gb  - Linker created -
-Relay_Control                 0x97f   0x28  Code  Gb  RELAY.o [1]
+NmiSR                         0xa79    0x2  Code  Lc  startup_ewarm.o [1]
+Region$$Table$$Base           0xa50          --   Gb  - Linker created -
+Region$$Table$$Limit          0xa60          --   Gb  - Linker created -
+Relay_Control                 0x97f    0xe  Code  Gb  RELAY.o [1]
 Relay_Init                    0x971    0xe  Code  Gb  RELAY.o [1]
-ResetISR                      0xa7d   0x14  Code  Gb  startup_ewarm.o [1]
+ResetISR                      0xa61   0x14  Code  Gb  startup_ewarm.o [1]
 SWITCH_LAMP_Callback    0x2000'0000    0x4  Data  Lc  DOOR_SWITCH_LAMP.o [1]
 SWITCH_LAMP_Callback          0x617   0x18  Code  Gb  main.o [1]
 SWITCH_LAMP_Init              0x425   0x6e  Code  Gb  DOOR_SWITCH_LAMP.o [1]
 SysTick_Callback        0x2000'0008    0x4  Data  Lc  SYS_TICK_program.o [1]
-SysTick_Handler               0x9c5   0x12  Code  Gb  SYS_TICK_program.o [1]
-SysTick_InitInterrupt         0x9a9   0x1c  Code  Gb  SYS_TICK_program.o [1]
+SysTick_Handler               0x9a9   0x12  Code  Gb  SYS_TICK_program.o [1]
+SysTick_InitInterrupt         0x98d   0x1c  Code  Gb  SYS_TICK_program.o [1]
 UART0_Callback                0x60d    0xa  Code  Gb  main.o [1]
 UART0_Callback          0x2000'000c    0x4  Data  Lc  UART.o [1]
 UART0_Handler                 0x8c7   0x26  Code  Gb  UART.o [1]
 UART0_Init                    0x7ed   0xb4  Code  Gb  UART.o [1]
 UART0_TransmitChar            0x8a1   0x10  Code  Gb  UART.o [1]
 UART0_TransmitString          0x8b1   0x16  Code  Gb  UART.o [1]
-__cmain                       0xab9         Code  Gb  cmain.o [4]
-__exit                        0xaed   0x14  Code  Gb  exit.o [5]
-__iar_data_init3              0xa21   0x28  Code  Gb  data_init.o [4]
-__iar_init_vfp                0xa49         Code  Gb  fpinit_M.o [3]
-__iar_program_start           0xa9d         Code  Gb  cstartup_M.o [4]
-__iar_zero_init3              0x9e9   0x38  Code  Gb  zero_init3.o [4]
-__low_level_init              0xad7    0x4  Code  Gb  low_level_init.o [2]
+__cmain                       0xa9d         Code  Gb  cmain.o [4]
+__exit                        0xad1   0x14  Code  Gb  exit.o [5]
+__iar_data_init3              0xa05   0x28  Code  Gb  data_init.o [4]
+__iar_init_vfp                0xa2d         Code  Gb  fpinit_M.o [3]
+__iar_program_start           0xa81         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3              0x9cd   0x38  Code  Gb  zero_init3.o [4]
+__low_level_init              0xabb    0x4  Code  Gb  low_level_init.o [2]
 __vector_table                  0x0  0x26c  Data  Gb  startup_ewarm.o [1]
-_call_main                    0xac5         Code  Gb  cmain.o [4]
-_exit                         0xae1         Code  Gb  cexit.o [4]
+_call_main                    0xaa9         Code  Gb  cmain.o [4]
+_exit                         0xac5         Code  Gb  cexit.o [4]
 ctz                           0x26d   0x18  Code  Gb  DIO.o [1]
 dio_init                      0x285   0xd8  Code  Gb  DIO.o [1]
 dio_writepin                  0x35d   0xa6  Code  Gb  DIO.o [1]
-exit                          0xadb    0x4  Code  Gb  exit.o [2]
+exit                          0xabf    0x4  Code  Gb  exit.o [2]
 main                          0x62f   0xb2  Code  Gb  main.o [1]
 pui32Stack              0x2000'0018  0x200  Data  Lc  startup_ewarm.o [1]
 received_char           0x2000'0010    0x1  Data  Gb  main.o [1]
@@ -279,7 +279,7 @@ received_char           0x2000'0010    0x1  Data  Gb  main.o [1]
 [4] = rt7M_tl.a
 [5] = shb_l.a
 
-  2'178 bytes of readonly  code memory
+  2'150 bytes of readonly  code memory
     646 bytes of readonly  data memory
     533 bytes of readwrite data memory
 
