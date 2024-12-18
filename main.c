@@ -25,10 +25,13 @@ void BUZZER_SYSTICK_Callback(void) {
     char temp[5] = "t_0#";
     temp[2] = ADC1_ReadValue();
     UART0_TransmitString(temp);
-    if(temp[2] > TEMPERATURE_THRESHOLD)
+    if(temp[2] > TEMPERATURE_THRESHOLD){
       BUZZER_Control(High);
-    else
+      UART0_TransmitChar('5');
+    }else{
       BUZZER_Control(Low);
+      UART0_TransmitChar('4');
+    }
     counter = 0;
   }else{
     counter++;
