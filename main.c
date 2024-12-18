@@ -22,9 +22,9 @@ uint8 LAMP_UART = 0;
 // Callback function for Door interrupt
 void DOOR_Callback(void) {
   if (!(GPIO_PORTF_DATA_R & 0x01)) {
-      UART0_TransmitString("Door Opened");
+      UART0_TransmitChar('3');
   } else {
-      UART0_TransmitString("Door Closed");
+      UART0_TransmitChar('2');
   }
 }
 
@@ -68,12 +68,15 @@ int main(void) {
           while(!SysTick_Is_Time_Out());
         BUZZER_Control(buzzer_port,buzzer_pin,Low);
       }
-      
+  
       LAMP_STATUS = LAMP_UART^LAMP_SWITCH;
-      if(LAMP_STATUS)
+      if(LAMP_STATUS){
+        UART0_TransmitChar('1');
         Relay_Control(RELAY1_PORT, RELAY1_PIN, RELAY_ON);
-      else
+      }else{
+        UART0_TransmitChar('0');
         Relay_Control(RELAY1_PORT, RELAY1_PIN, RELAY_OFF);
+      }
       
       if (received_char != 0) {
           char c = received_char;
