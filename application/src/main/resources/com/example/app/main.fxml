@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<TabPane fx:id="mainTabPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.app.MainController">
+    <tabs>
+        <Tab text="Lamp &amp; Plug" closable="false">
+            <fx:include source="lamp_tab.fxml"/>
+        </Tab>
+        <Tab text="Door" closable="false">
+            <fx:include source="door_tab.fxml"/>
+        </Tab>
+    </tabs>
+</TabPane>

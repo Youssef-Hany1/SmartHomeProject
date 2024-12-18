@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="doorRoot" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.app.DoorTabController">
+    <children>
+        <VBox spacing="10" layoutX="20" layoutY="20">
+            <Label text="Door Status:"/>
+            <HBox spacing="10">
+                <Label fx:id="doorStatusLabel" text="Unknown"/>
+                <ImageView fx:id="doorImageView" fitWidth="400" fitHeight="400"/>
+            </HBox>
+            <Label text="Door Event History:"/>
+            <ListView fx:id="doorEventsList" prefHeight="200" prefWidth="200"/>
+        </VBox>
+    </children>
+</AnchorPane>
