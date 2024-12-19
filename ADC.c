@@ -8,7 +8,7 @@ void ADC1_Init(void)
     // 1. Enable the ADC clock using the RCGCADC register
     SYSCTL_RCGCADC_R |= (1 << 1);
     volatile int delay = 0; // Allow stabilization time
-    delay++;
+    for (volatile int i = 0; i < 1000; i++); // Proper delay for clock stabilization
 
     // 2. Enable the clock to the GPIO module for PORTD
     SYSCTL_RCGCGPIO_R |= (1 << 3);
@@ -30,12 +30,16 @@ void ADC1_Init(void)
     // 7. Configure sample control: end of sequence and interrupt enable
     ADC1_SSCTL3_R = (1 << 1) | (1 << 2); // Enable END and IE bits
 
+    // ** New Code: Set ADC sampling time for stability **
+    ADC1_SAC_R = 0x06; // Hardware oversampling set to 64x for improved stability
+
     // 8. Disable interrupts for now (unless required)
     ADC1_IM_R &= ~(1 << 3);
 
     // 9. Enable sample sequencer 3
     ADC1_ACTSS_R |= (1 << 3);
 }
+
 
 uint32 ADC1_ReadValue(void)
 {
@@ -44,4 +48,15 @@ uint32 ADC1_ReadValue(void)
     uint32 ADC_Value = ADC1_SSFIFO3_R; // Read the ADC value
     ADC1_ISC_R = (1 << 3);             // Clear the interrupt flag
     return ADC_Value;                  // Return the result
+}
+
+// Function to convert ADC value to temperature
+float ADC_To_Temperature(uint32 adcValue) {
+    // Convert raw ADC value to voltage (assuming 3.3V reference)
+    float voltage = (adcValue * 3.3) / 4095;
+
+    // Convert voltage to temperature (10mV/°C -> 0.01V/°C)
+    float temperature = voltage / 0.01;
+
+    return temperature; // Return the temperature in Celsius
 }

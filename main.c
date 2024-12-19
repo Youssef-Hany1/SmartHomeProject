@@ -9,6 +9,7 @@
 #include "DIO.h"
 #include "tm4c123gh6pm.h"
 #include "ADC.h"
+#include <stdio.h>
 
 // Global Variables
 volatile uint8 received_char = 0;
@@ -19,23 +20,21 @@ uint8 LAMP_UART = 0;
 
 // Callback function for Buzzer Systick interrupt
 void BUZZER_SYSTICK_Callback(void) {
-  static uint8 counter = 0;
-  if(counter == 2)
-  {
-    char temp[5] = "t_0#";
-    temp[2] = ADC1_ReadValue();
-    UART0_TransmitString(temp);
-    if(temp[2] > TEMPERATURE_THRESHOLD){
-      BUZZER_Control(High);
-      UART0_TransmitChar('5');
-    }else{
-      BUZZER_Control(Low);
-      UART0_TransmitChar('4');
+    uint32 adcValue = ADC1_ReadValue(); // Read raw ADC value
+    float temperature = ADC_To_Temperature(adcValue); // Convert to temperature
+
+    char temp[10]; // Adjusted buffer size for formatted string
+    sprintf(temp, "t_%.1f#", temperature); // Format temperature with one decimal point
+    UART0_TransmitString(temp); // Transmit temperature string over UART
+
+    // Control buzzer based on temperature threshold
+    if (temperature > TEMPERATURE_THRESHOLD) {
+        BUZZER_Control(High); // Turn buzzer ON
+        UART0_TransmitChar('5'); // Send indication for high temperature
+    } else {
+        BUZZER_Control(Low); // Turn buzzer OFF
+        UART0_TransmitChar('4'); // Send indication for normal temperature
     }
-    counter = 0;
-  }else{
-    counter++;
-  }
 }
 
 // Callback function for Door interrupt
