@@ -59,10 +59,17 @@ public class MainController {
                     doorStatus = (doorStatus == '2') ? '3' : '2';
                     doorTabController.updateDoorStatus(doorStatus);
 
-                    // Update temperature
+                    // Simulate incoming UART temperature data
                     Thread.sleep(2000);
-                    temperature = 20 + random.nextInt(11); // 20-30°C
-                    temperatureTabController.updateTemperature(temperature);
+                    // Create a random temperature with a decimal
+                    double simulatedTemp = 20 + Math.random() * 10; // 20.0 to 30.0
+                    String uartData = "t_" + String.format("%.1f", simulatedTemp);
+                    // Parse the UART data
+                    String[] parts = uartData.split("_");
+                    double parsedTemp = Double.parseDouble(parts[1]);
+                    // Update the UI with the parsed temperature
+                    temperatureTabController.updateTemperature(parsedTemp);
+
 
                     // Simulate alarm signal
                     Thread.sleep(1000);
