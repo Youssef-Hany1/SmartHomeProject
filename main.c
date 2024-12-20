@@ -74,10 +74,10 @@ int main(void) {
       
       LAMP_STATUS = LAMP_UART^LAMP_SWITCH;
       if(LAMP_STATUS){
-        //UART0_TransmitChar('1');
+        UART0_TransmitChar('1');
         Relay_Control(RELAY1_PORT, RELAY1_PIN, RELAY_ON);
       }else{
-        //UART0_TransmitChar('0');
+        UART0_TransmitChar('0');
         Relay_Control(RELAY1_PORT, RELAY1_PIN, RELAY_OFF);
       }
       
