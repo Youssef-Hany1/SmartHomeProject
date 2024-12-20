@@ -6,6 +6,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 public class DoorTabController {
 
@@ -19,7 +20,7 @@ public class DoorTabController {
     private ImageView doorImageView;
 
     @FXML
-    private AnchorPane doorRoot;
+    private VBox doorRoot;
 
     private UARTManager uartManager;
     private char lastDoorStatus = '2'; // Assume closed initially
@@ -30,9 +31,9 @@ public class DoorTabController {
         setDoorImage(false); // door closed by default
     }
 
-    public void setUARTManager(UARTManager manager) {
-        this.uartManager = manager;
-    }
+//    public void setUARTManager(UARTManager manager) {
+//        this.uartManager = manager;
+//    }
 
     public void updateDoorStatus(char status) {
         // '2' = closed, '3' = open

@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane fx:id="doorRoot" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.app.DoorTabController">
-    <children>
-        <VBox spacing="15" layoutX="20" layoutY="20" prefWidth="600">
-            <Label text="Door Control Panel" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-            <Separator/>
-
-            <GridPane hgap="10" vgap="10">
-                <Label text="Door Status:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                <Label fx:id="doorStatusLabel" text="Unknown"
-                       style="-fx-font-size: 16px;" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-
-                <ImageView fx:id="doorImageView" fitWidth="300" fitHeight="300"
-                           GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
-            </GridPane>
-
-            <Separator/>
-            <Label text="Door Event History:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-            <ListView fx:id="doorEventsList" prefHeight="150"/>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:id="doorRoot" fx:controller="com.example.app.DoorTabController" spacing="10">
+    <TitledPane text="Door" expanded="true">
+        <VBox spacing="10">
+            <Label text="Door Status:"/>
+            <HBox spacing="10">
+                <Label fx:id="doorStatusLabel" text="Unknown"/>
+                <ImageView fx:id="doorImageView" fitWidth="50" fitHeight="50"/>
+            </HBox>
+            <Label text="Door Event History:"/>
+            <ListView fx:id="doorEventsList" prefHeight="200" prefWidth="200"/>
         </VBox>
-    </children>
-</AnchorPane>
+    </TitledPane>
+</VBox>

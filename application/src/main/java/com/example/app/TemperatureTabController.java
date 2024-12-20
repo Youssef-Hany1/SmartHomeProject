@@ -22,11 +22,11 @@ public class TemperatureTabController {
     private ImageView alarmImageView; // If you no longer need the tab's alarm image, you can remove this from the FXML and controller.
 
     @FXML
-    private AnchorPane temperatureRoot;
+    private VBox temperatureRoot;
 
     private UARTManager uartManager;
     private boolean alarmOn = false;
-    private int currentTemperature = 25;
+    private double currentTemperature = 25.0;
 
     // Separate stage for the alarm window
     private Stage alarmStage;
@@ -42,7 +42,7 @@ public class TemperatureTabController {
         this.uartManager = manager;
     }
 
-    public void updateTemperature(int temp) {
+    public void updateTemperature(double temp) {
         this.currentTemperature = temp;
         // Wrap UI changes in runLater
         Platform.runLater(() -> {
@@ -64,7 +64,7 @@ public class TemperatureTabController {
         });
     }
 
-    private void showAlarmWindow(int temp) {
+    private void showAlarmWindow(double temp) {
         if (alarmStage == null) {
             alarmStage = new Stage();
             alarmStage.initModality(Modality.APPLICATION_MODAL);
@@ -102,7 +102,7 @@ public class TemperatureTabController {
 
 
 
-    private void updateAlarmWindow(int temp) {
+    private void updateAlarmWindow(double temp) {
         // Ensure all UI changes happen on the FX thread
         Platform.runLater(() -> {
             if (alarmStage != null) {
