@@ -22,7 +22,7 @@ public class TemperatureTabController {
     private ImageView alarmImageView; // If you no longer need the tab's alarm image, you can remove this from the FXML and controller.
 
     @FXML
-    private AnchorPane temperatureRoot;
+    private VBox temperatureRoot;
 
     private UARTManager uartManager;
     private boolean alarmOn = false;

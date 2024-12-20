@@ -2,8 +2,10 @@ package com.example.app;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 import java.util.Random;
 
@@ -16,24 +18,36 @@ public class MainController {
     private LampTabController lampTabController;
     private DoorTabController doorTabController;
     private TemperatureTabController temperatureTabController;
-
+    @FXML
+    private Label temperatureLabel; // A reference to find root
+    @FXML
+    private VBox rootVBox;
     @FXML
     public void initialize() {
-        Platform.runLater(() -> {
-            AnchorPane lampPane = (AnchorPane) mainTabPane.getTabs().get(0).getContent();
-            lampTabController = (LampTabController) lampPane.getUserData();
+        Platform.runLater(this::findControllersAndStartSimulation);
+    }
 
-            AnchorPane doorPane = (AnchorPane) mainTabPane.getTabs().get(1).getContent();
-            doorTabController = (DoorTabController) doorPane.getUserData();
+    private void findControllersAndStartSimulation() {
+        VBox root = rootVBox;
 
-            AnchorPane tempPane = (AnchorPane) mainTabPane.getTabs().get(2).getContent();
-            temperatureTabController = (TemperatureTabController) tempPane.getUserData();
+        //VBox root = (VBox) temperatureLabel.getScene().getRoot();
 
-            simulateData();
-        });
+        VBox lampBox = (VBox) root.getChildren().get(0);
+        System.out.println(lampBox.getUserData());
+        lampTabController = (LampTabController) lampBox.getUserData();
+
+        VBox doorBox = (VBox) root.getChildren().get(1);
+        doorTabController = (DoorTabController) doorBox.getUserData();
+
+        VBox tempBox = (VBox) root.getChildren().get(2);
+        temperatureTabController = (TemperatureTabController) tempBox.getUserData();
+
+        simulateData();
     }
 
     private void simulateData() {
+        System.out.println("Simulation started");
+
         Random random = new Random();
         new Thread(() -> {
             char lampStatus = '0';    // Lamp initially off
@@ -69,7 +83,6 @@ public class MainController {
                     double parsedTemp = Double.parseDouble(parts[1]);
                     // Update the UI with the parsed temperature
                     temperatureTabController.updateTemperature(parsedTemp);
-
 
                     // Simulate alarm signal
                     Thread.sleep(1000);

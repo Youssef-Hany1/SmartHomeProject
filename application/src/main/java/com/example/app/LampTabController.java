@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 public class LampTabController {
 
@@ -21,7 +22,7 @@ public class LampTabController {
     private ImageView plugImageView;
 
     @FXML
-    private AnchorPane lampRoot;
+    private VBox lampRoot;
 
     private UARTManager uartManager;
 
