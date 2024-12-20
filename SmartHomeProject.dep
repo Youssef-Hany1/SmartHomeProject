@@ -5,201 +5,186 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\LED.h</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_nvic.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$PROJ_DIR$\SWITCH.c</file>
             <file>$PROJ_DIR$\..\SYS_TICK\DIO.h</file>
             <file>$PROJ_DIR$\Debug\Obj\DOOR.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</file>
-            <file>$PROJ_DIR$\DOOR.c</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\SWITCH_LAMP.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\UART.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_nvic.h</file>
             <file>$PROJ_DIR$\TEMP_SENSOR.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
-            <file>$PROJ_DIR$\Debug\Obj\BUZZER.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</file>
             <file>$PROJ_DIR$\Debug\Obj\RELAY.o</file>
-            <file>$PROJ_DIR$\SWITCH_LAMP.c</file>
-            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
-            <file>$PROJ_DIR$\TEMP_SENSOR.c</file>
-            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
-            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$PROJ_DIR$\Debug\List\SmartHomeProject.map</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\SWITCH.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\ADC.o</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\DIO.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\TEMP_SENSOR.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\SYS_TICK_program.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\Debug\Exe\SmartHomeProject.out</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_ewarm.o</file>
-            <file>$PROJ_DIR$\SWITCH_LAMP.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\DIO.o</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_interface.h</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\STD_TYPES.h</file>
-            <file>$PROJ_DIR$\UART.h</file>
-            <file>$PROJ_DIR$\STD_TYPES.h</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$PROJ_DIR$\SYS_TICK_interface.h</file>
-            <file>$PROJ_DIR$\BIT_WISE_OPS.h</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\tm4c123gh6pm.h</file>
-            <file>$PROJ_DIR$\UART.c</file>
-            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
-            <file>$PROJ_DIR$\Debug\Obj\DOOR_SWITCH_LAMP.o</file>
-            <file>$PROJ_DIR$\SWITCH.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
             <file>$PROJ_DIR$\DIO.h</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</file>
             <file>$PROJ_DIR$\ADC.h</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\BIT_WISE_OPS.h</file>
-            <file>$PROJ_DIR$\BUZZER.h</file>
-            <file>$PROJ_DIR$\DIO.c</file>
-            <file>$PROJ_DIR$\ADC.c</file>
-            <file>$PROJ_DIR$\BUZZER.c</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\LED.c</file>
-            <file>$PROJ_DIR$\DOOR.h</file>
-            <file>$PROJ_DIR$\RELAY.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\LED.h</file>
             <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\RELAY.c</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\startup_ewarm.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\LED.o</file>
             <file>$PROJ_DIR$\DOOR_SWITCH_LAMP.c</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\LED.c</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\LED.h</file>
+            <file>$PROJ_DIR$\ADC.c</file>
+            <file>$PROJ_DIR$\BUZZER.h</file>
+            <file>$PROJ_DIR$\RELAY.c</file>
+            <file>$PROJ_DIR$\BUZZER.c</file>
+            <file>$PROJ_DIR$\DIO.c</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\BIT_WISE_OPS.h</file>
+            <file>$PROJ_DIR$\RELAY.h</file>
+            <file>$PROJ_DIR$\SWITCH_LAMP.h</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\startup_ewarm.c</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\STD_TYPES.h</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_interface.h</file>
+            <file>$PROJ_DIR$\DOOR.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\SWITCH.h</file>
+            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
             <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
             <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\DIO.o</file>
+            <file>$PROJ_DIR$\LED.h</file>
+            <file>$PROJ_DIR$\SWITCH.c</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\DIO.c</file>
+            <file>$PROJ_DIR$\Debug\Exe\SmartHomeProject.out</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\DOOR.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\DOOR_SWITCH_LAMP.o</file>
+            <file>$PROJ_DIR$\UART.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\TEMP_SENSOR.o</file>
+            <file>$PROJ_DIR$\Debug\List\SmartHomeProject.map</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\LED.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\SWITCH.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\UART.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
+            <file>$PROJ_DIR$\SWITCH_LAMP.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\BUZZER.o</file>
+            <file>$PROJ_DIR$\UART.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\SYS_TICK_program.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h</file>
+            <file>$PROJ_DIR$\BIT_WISE_OPS.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\STD_TYPES.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\SWITCH_LAMP.o</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\tm4c123gh6pm.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\ADC.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_ewarm.o</file>
+            <file>$PROJ_DIR$\SYS_TICK_interface.h</file>
+            <file>$PROJ_DIR$\TEMP_SENSOR.c</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 31 23</file>
+                    <file> 39 45</file>
                 </tool>
             </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\SWITCH.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 25</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 13 3 30 59 41 34 49 48 21</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\DOOR.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 6</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 13 3 30 59 41 34 43 49 57 39 21</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\SWITCH_LAMP.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 10</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 13 3 30 59 41 34 43 49 39 33 21</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\TEMP_SENSOR.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 28</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 13 3 30 59 41 34 43 49 39 12 21</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\SYS_TICK\DIO.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 35</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 51 5 37 44</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\Debug\Exe\SmartHomeProject.out</name>
-            <outputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 23</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 14 1 19 22 46 26 15 35 47 64 17 29 11 16 32 7</file>
-                </tool>
-            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 29</file>
+                    <file> 55</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 9 51 37 36 44</file>
+                    <file> 9 22 26 27 62</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\UART.c</name>
+            <name>$PROJ_DIR$\main.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 11</file>
+                    <file> 7</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 39 38 21</file>
+                    <file> 50 8 46 9 60 33 58 34 67 12 18 10 28 36 23 59 24 65 43 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\DOOR_SWITCH_LAMP.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 42</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 57 10 28 59 24 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\SYS_TICK\LED.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 47</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50 8 46 9 60 58 67 0 16 26 27 62</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\ADC.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 63</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 12 59 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\RELAY.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 5</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10 23 59 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\BUZZER.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 53</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 9 18 10 59 65 32</file>
                 </tool>
             </inputs>
         </file>
@@ -214,42 +199,12 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 43 49 39 21</file>
+                    <file> 57 10 59 32</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\ADC.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 26</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 50 39 21</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\BUZZER.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 15</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 9 52 49 39 42 21</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\SYS_TICK\LED.c</name>
+            <name>$PROJ_DIR$\..\SYS_TICK\startup_ewarm.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
@@ -259,80 +214,121 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 13 3 30 9 59 41 34 5 60 37 36 44</file>
+                    <file> 50 8 46 60 58 67 2 56</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\main.c</name>
+            <name>$PROJ_DIR$\SWITCH.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 16</file>
+                    <file> 48</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 13 3 30 9 59 66 41 67 34 50 52 49 57 0 58 39 33 42 38 21</file>
+                    <file> 50 8 46 60 58 67 10 31 32</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\RELAY.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 17</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 49 58 39 21</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\SYS_TICK\startup_ewarm.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 32</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 13 3 30 59 41 34 2 24</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\DOOR_SWITCH_LAMP.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 47</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 43 49 57 39 33 21</file>
-                </tool>
-            </inputs>
-        </file>
-        <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>ILINK</tool>
-        </forcedrebuild>
-        <forcedrebuild>
             <name>$PROJ_DIR$\..\SYS_TICK\DIO.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 22 0 26 62</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\SmartHomeProject.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 45</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 51 6 30 40 29 63 53 35 42 47 5 55 49 7 64 4</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\DOOR.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50 8 46 60 58 67 57 10 28 59 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\SWITCH_LAMP.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 61</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50 8 46 60 58 67 57 10 59 24 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\UART.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 49</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 59 43 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\TEMP_SENSOR.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50 8 46 60 58 67 57 10 59 3 32</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</name>
             <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
-            <name>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</name>
+            <name>$PROJ_DIR$\main.c</name>
             <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
@@ -340,12 +336,16 @@
             <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
-            <name>$PROJ_DIR$\main.c</name>
+            <name>$PROJ_DIR$\..\SYS_TICK\startup_ewarm.c</name>
             <tool>ICCARM</tool>
         </forcedrebuild>
         <forcedrebuild>
-            <name>$PROJ_DIR$\..\SYS_TICK\startup_ewarm.c</name>
+            <name>$PROJ_DIR$\..\SYS_TICK\DIO.c</name>
             <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
         </forcedrebuild>
         <forcedrebuild>
             <name>[REBUILD_ALL]</name>
