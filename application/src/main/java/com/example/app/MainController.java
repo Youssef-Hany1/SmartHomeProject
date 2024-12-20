@@ -4,6 +4,9 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 public class MainController {
 
     public static UARTManager uartManager;
@@ -14,17 +17,15 @@ public class MainController {
     @FXML
     private VBox rootVBox;
 
-
     private Thread uartReadThread;
+    private final BlockingQueue<Character> dataQueue = new LinkedBlockingQueue<>();
 
     @FXML
     public void initialize() {
-        // Using runLater to ensure the scene is fully loaded and controllers are available
         Platform.runLater(this::findControllersAndStartUART);
     }
 
     private void findControllersAndStartUART() {
-        // Retrieve controllers from userData
         VBox lampBox = (VBox) rootVBox.getChildren().get(0);
         lampController = (LampTabController) lampBox.getUserData();
 
@@ -34,36 +35,22 @@ public class MainController {
         VBox tempBox = (VBox) rootVBox.getChildren().get(2);
         temperatureController = (TemperatureTabController) tempBox.getUserData();
 
-        // Initialize UARTManager with COM13, 9600 baud (adjust as needed)
         uartManager = new UARTManager("COM13", 9600);
 
-        // Start a thread to read data from UART continuously
         startUARTReadThread();
+        startDataProcessingThread();
     }
 
     private void startUARTReadThread() {
         uartReadThread = new Thread(() -> {
-            StringBuilder buffer = new StringBuilder();
             while (!Thread.currentThread().isInterrupted()) {
-                int data = uartManager.read();
-                if (data != -1) {
-                    char c = (char) data;
-                    // Assuming data is line-based or separated by '\n'
-                    // Adjust this logic according to how data is sent by Tiva
-                    if (c == '\n') {
-                        String message = buffer.toString().trim();
-                        buffer.setLength(0); // clear buffer
-                        handleUARTMessage(message);
-                    } else {
-                        buffer.append(c);
+                try {
+                    int data = uartManager.read();
+                    if (data != -1) {
+                        dataQueue.put((char) data);
                     }
-                } else {
-                    // No data available, small sleep to prevent CPU spinning
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                    }
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                 }
             }
         });
@@ -71,63 +58,49 @@ public class MainController {
         uartReadThread.start();
     }
 
-    private void handleUARTMessage(String message) {
-        // Parse the message according to your protocol
-        // Examples:
-        // Lamp states: '0' or '1'
-        // Plug states: '2' or '3'
-        // Door states: '2' (closed) or '3' (open)
-        // Temperature: "t_21.7"
-        // Alarm: '4' (off), '5' (on)
-
-        if (message.startsWith("t_")) {
-            // Temperature data
-            String[] parts1 = message.split("_");
-            String[] parts=parts1[1].split("#");
-            if (parts.length == 2) {
+    private void startDataProcessingThread() {
+        Thread dataProcessingThread = new Thread(() -> {
+            while (!Thread.currentThread().isInterrupted()) {
                 try {
-                    double tempVal = Double.parseDouble(parts[0]);
-                    System.out.println(tempVal);
-                    Platform.runLater(() -> temperatureController.updateTemperature(tempVal));
-                } catch (NumberFormatException e) {
-                    // handle parse error
+                    char receivedChar = dataQueue.take();
+                    processUARTMessage(receivedChar);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                 }
             }
-        } else if (message.equals("0") || message.equals("1")) {
-            // Lamp status
-            char status = message.charAt(0);
-            Platform.runLater(() -> lampController.updateLampStatus(status));
-        } else if (message.equals("2") || message.equals("3")) {
-            // Could be plug or door; you need a way to differentiate
-            // Let's assume door vs plug are on separate lines or you have some prefix.
-            // If no prefix, you need additional logic.
-            // For example, if your device sends:
-            // "L0"/"L1" for lamp
-            // "P2"/"P3" for plug
-            // "D2"/"D3" for door
-            // "t_XX.X" for temp
-            //
-            // Adjust code accordingly.
+        });
+        dataProcessingThread.setDaemon(true);
+        dataProcessingThread.start();
+    }
 
-            // If message is '2' or '3' for plug:
-            // Platform.runLater(() -> lampController.updatePlugStatus(message.charAt(0)));
-
-            // If message is '2' or '3' for door:
-            Platform.runLater(() -> doorController.updateDoorStatus(message.charAt(0)));
-
-            // Without a prefix, you must rely on your actual UART protocol.
-
-        } else if (message.equals("4")) {
-            // Alarm off
-            Platform.runLater(() -> temperatureController.setAlarm(false));
-        } else if (message.equals("5")) {
-            // Alarm on
-            Platform.runLater(() -> temperatureController.setAlarm(true));
-        }
+    private void processUARTMessage(char receivedChar) {
+        Platform.runLater(() -> {
+            switch (receivedChar) {
+                case '0':
+                    lampController.updateLampStatus('0');
+                    break;
+                case '1':
+                    lampController.updateLampStatus('1');
+                    break;
+                case '2':
+                    doorController.updateDoorStatus('2');
+                    break;
+                case '3':
+                    doorController.updateDoorStatus('3');
+                    break;
+                case '4':
+                    temperatureController.setAlarm(false);
+                    break;
+                case '5':
+                    temperatureController.setAlarm(true);
+                    break;
+                default:
+                    System.out.println("Unknown data received: " + receivedChar);
+            }
+        });
     }
 
     public void stop() {
-        // Called when application is closing
         if (uartReadThread != null && uartReadThread.isAlive()) {
             uartReadThread.interrupt();
         }

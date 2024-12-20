@@ -42,29 +42,30 @@ public class LampTabController {
     @FXML
     private void handleLampOn() {
         sendCommand('1'); // Lamp ON
-        updateLampStatus('1');
+        //updateLampStatus('1');
     }
 
     @FXML
     private void handleLampOff() {
         sendCommand('0'); // Lamp OFF
-        updateLampStatus('0');
+        //updateLampStatus('0');
     }
 
     @FXML
     private void handlePlugOn() {
-        sendCommand('3'); // Plug ON
-        updatePlugStatus('3');
+        sendCommand('9'); // Plug ON
+        updatePlugStatus('9');
 
     }
 
     @FXML
     private void handlePlugOff() {
-        sendCommand('2'); // Plug OFF
-        updatePlugStatus('2');
+        sendCommand('8'); // Plug OFF
+        updatePlugStatus('8');
     }
 
     public void updateLampStatus(char status) {
+        System.out.println(status);
         // status: '0' = off, '1' = on
         boolean isOn = (status == '1');
         String text = isOn ? "ON" : "OFF";
@@ -75,8 +76,10 @@ public class LampTabController {
     }
 
     public void updatePlugStatus(char status) {
-        // status: '2' = off, '3' = on
-        boolean isOn = (status == '3');
+        System.out.println(status);
+
+        // status: '8' = off, '9' = on
+        boolean isOn = (status == '9');
         String text = isOn ? "ON" : "OFF";
         javafx.application.Platform.runLater(() -> {
             plugStatusLabel.setText(text);

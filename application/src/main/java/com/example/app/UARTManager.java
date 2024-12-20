@@ -30,9 +30,10 @@ public class UARTManager {
                 System.out.println("Read byte: " + buffer[0]);
                 return buffer[0] & 0xFF;
             }
-        } else {
-            System.out.println("No bytes available to read.");
         }
+//        else {
+//            //System.out.println("No bytes available to read.");
+//        }
         return -1; // Return -1 if no data is available
     }
 

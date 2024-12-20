@@ -24,7 +24,7 @@ public class TemperatureTabController {
     @FXML
     private VBox temperatureRoot;
 
-    private UARTManager uartManager;
+    //private UARTManager uartManager;
     private boolean alarmOn = false;
     private double currentTemperature = 25.0;
 
@@ -38,9 +38,9 @@ public class TemperatureTabController {
         // setAlarm(false); // Alarm off by default
     }
 
-    public void setUARTManager(UARTManager manager) {
-        this.uartManager = manager;
-    }
+//    public void setUARTManager(UARTManager manager) {
+//        this.uartManager = manager;
+//    }
 
     public void updateTemperature(double temp) {
         this.currentTemperature = temp;
