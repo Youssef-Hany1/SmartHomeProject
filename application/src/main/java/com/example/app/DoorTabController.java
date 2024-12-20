@@ -31,9 +31,9 @@ public class DoorTabController {
         setDoorImage(false); // door closed by default
     }
 
-    public void setUARTManager(UARTManager manager) {
-        this.uartManager = manager;
-    }
+//    public void setUARTManager(UARTManager manager) {
+//        this.uartManager = manager;
+//    }
 
     public void updateDoorStatus(char status) {
         // '2' = closed, '3' = open

@@ -7,6 +7,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
+import static com.example.app.MainController.uartManager;
+
 public class LampTabController {
 
     @FXML
@@ -24,7 +26,6 @@ public class LampTabController {
     @FXML
     private VBox lampRoot;
 
-    private UARTManager uartManager;
 
     @FXML
     public void initialize() {
@@ -34,9 +35,9 @@ public class LampTabController {
         setPlugImage(false); // Plug off by default
     }
 
-    public void setUARTManager(UARTManager manager) {
-        this.uartManager = manager;
-    }
+//    public void setUARTManager(UARTManager manager) {
+//        this.uartManager = manager;
+//    }
 
     @FXML
     private void handleLampOn() {
@@ -99,7 +100,7 @@ public class LampTabController {
 
     private void sendCommand(char c) {
         if (uartManager != null) {
-            // uartManager.write(c);
+            uartManager.write(c);
         }
         System.out.println("Sent command: " + c);
     }
