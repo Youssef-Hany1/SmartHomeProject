@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.app.MainController" fx:id="rootVBox" spacing="20" style="-fx-padding:20;">
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.app.MainController" fx:id="rootVBox" spacing="1" style="-fx-padding:20;" maxWidth="Infinity" maxHeight="Infinity">
 
     <fx:include source="lamp_tab.fxml"/>
     <fx:include source="door_tab.fxml"/>
     <fx:include source="temperature_tab.fxml"/>
-</VBox>
+</HBox>

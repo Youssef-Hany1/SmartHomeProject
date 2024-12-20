@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:id="temperatureRoot" fx:controller="com.example.app.TemperatureTabController" spacing="10">
-    <TitledPane text="Temperature" expanded="true">
-        <VBox spacing="10">
-            <Label text="Temperature:"/>
-            <Label fx:id="temperatureLabel" text="Unknown °C"/>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:id="temperatureRoot" fx:controller="com.example.app.TemperatureTabController" spacing="20" style="-fx-padding:20;">
+    <TitledPane text="Temperature" expanded="true" style="-fx-font-size:16px;">
+        <VBox spacing="20">
+            <Label text="Temperature:" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+            <Label fx:id="temperatureLabel" text="Unknown °C" style="-fx-font-size:24px; -fx-font-weight:bold;"/>
         </VBox>
     </TitledPane>
 </VBox>

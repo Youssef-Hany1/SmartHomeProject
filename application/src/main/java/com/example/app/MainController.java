@@ -2,6 +2,7 @@ package com.example.app;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.concurrent.BlockingQueue;
@@ -15,7 +16,7 @@ public class MainController {
     private TemperatureTabController temperatureController;
 
     @FXML
-    private VBox rootVBox;
+    private HBox rootVBox;
 
     private Thread uartReadThread;
     private final BlockingQueue<Character> dataQueue = new LinkedBlockingQueue<>();
@@ -25,6 +26,7 @@ public class MainController {
     @FXML
     public void initialize() {
         Platform.runLater(this::findControllersAndStartUART);
+
     }
 
     private void findControllersAndStartUART() {
@@ -37,7 +39,7 @@ public class MainController {
         VBox tempBox = (VBox) rootVBox.getChildren().get(2);
         temperatureController = (TemperatureTabController) tempBox.getUserData();
 
-        uartManager = new UARTManager("COM13", 9600);
+        uartManager = new UARTManager("COM3", 9600);
 
         startUARTReadThread();
         startDataProcessingThread();

@@ -2,27 +2,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.ImageView?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:id="lampRoot" fx:controller="com.example.app.LampTabController" spacing="10">
-    <TitledPane text="Lamp &amp; Plug" expanded="true">
-        <VBox spacing="10">
-            <HBox spacing="10">
-                <Button text="Lamp ON" fx:id="lampOnBtn" onAction="#handleLampOn"/>
-                <Button text="Lamp OFF" fx:id="lampOffBtn" onAction="#handleLampOff"/>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:id="lampRoot" fx:controller="com.example.app.LampTabController" spacing="20" style="-fx-padding:20;">
+    <TitledPane text="Lamp &amp; Plug" expanded="true" style="-fx-font-size:18px;">
+        <VBox spacing="20">
+            <HBox spacing="20">
+                <Button text="Lamp ON" fx:id="lampOnBtn" onAction="#handleLampOn" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="Lamp OFF" fx:id="lampOffBtn" onAction="#handleLampOff" maxWidth="Infinity" maxHeight="Infinity"/>
+            </HBox>
+            <HBox spacing="20">
+                <Button text="Plug ON" fx:id="plugOnBtn" onAction="#handlePlugOn" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="Plug OFF" fx:id="plugOffBtn" onAction="#handlePlugOff" maxWidth="Infinity" maxHeight="Infinity"/>
             </HBox>
             <HBox spacing="10">
-                <Button text="Plug ON" fx:id="plugOnBtn" onAction="#handlePlugOn"/>
-                <Button text="Plug OFF" fx:id="plugOffBtn" onAction="#handlePlugOff"/>
+                <Label text="Lamp Status:" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+                <Label fx:id="lampStatusLabel" text="Unknown" style="-fx-font-size:20px;"/>
             </HBox>
-            <Label text="Lamp Status:"/>
+            <ImageView fx:id="lampImageView" fitWidth="250" fitHeight="250" preserveRatio="true"/>
             <HBox spacing="10">
-                <Label fx:id="lampStatusLabel" text="Unknown"/>
-                <ImageView fx:id="lampImageView" fitWidth="50" fitHeight="50"/>
+                <Label text="Plug Status:" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+                <Label fx:id="plugStatusLabel" text="Unknown" style="-fx-font-size:20px;"/>
             </HBox>
-            <Label text="Plug Status:"/>
-            <HBox spacing="10">
-                <Label fx:id="plugStatusLabel" text="Unknown"/>
-                <ImageView fx:id="plugImageView" fitWidth="50" fitHeight="50"/>
-            </HBox>
+            <ImageView fx:id="plugImageView" fitWidth="200" fitHeight="200" preserveRatio="true"/>
         </VBox>
     </TitledPane>
 </VBox>

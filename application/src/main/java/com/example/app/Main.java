@@ -17,10 +17,20 @@ public class Main extends Application {
         // Set initial scene size
         Scene scene = new Scene(root, 1000, 800);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/app/styles.css")).toExternalForm());
+        // Bind components to the stage size (if needed)
+        scene.widthProperty().addListener((obs, oldVal, newVal) -> {
+            // Optional: Adjust specific element widths if necessary
+        });
 
+        scene.heightProperty().addListener((obs, oldVal, newVal) -> {
+            // Optional: Adjust specific element heights if necessary
+        });
         primaryStage.setTitle("Home Appliances Control");
         primaryStage.setScene(scene);
+        //primaryStage.setMaximized(true);
         primaryStage.setResizable(true); // or false, depending on your preference
+        //primaryStage.setFullScreen(true);
+
         primaryStage.show();
     }
 
