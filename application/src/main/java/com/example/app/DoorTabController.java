@@ -22,13 +22,14 @@ public class DoorTabController {
     @FXML
     private VBox doorRoot;
 
-    private UARTManager uartManager;
+//    private UARTManager uartManager;
     private char lastDoorStatus = 'c'; // Assume closed initially
 
     @FXML
     public void initialize() {
         doorRoot.setUserData(this);
         setDoorImage(false); // door closed by default
+
     }
 
 //    public void setUARTManager(UARTManager manager) {

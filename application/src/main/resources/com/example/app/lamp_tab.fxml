@@ -6,21 +6,21 @@
     <TitledPane text="Lamp &amp; Plug" expanded="true" style="-fx-font-size:18px;">
         <VBox spacing="20">
             <HBox spacing="20">
-                <Button text="Lamp ON" fx:id="lampOnBtn" onAction="#handleLampOn" maxWidth="Infinity" maxHeight="Infinity"/>
-                <Button text="Lamp OFF" fx:id="lampOffBtn" onAction="#handleLampOff" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="Lamp ON" fx:id="lampOnBtn" onAction="#handleLampOn" maxWidth="Infinity" maxHeight="Infinity" styleClass="on-button"/>
+                <Button text="Lamp OFF" fx:id="lampOffBtn" onAction="#handleLampOff" maxWidth="Infinity" maxHeight="Infinity" styleClass="off-button"/>
             </HBox>
             <HBox spacing="20">
-                <Button text="Plug ON" fx:id="plugOnBtn" onAction="#handlePlugOn" maxWidth="Infinity" maxHeight="Infinity"/>
-                <Button text="Plug OFF" fx:id="plugOffBtn" onAction="#handlePlugOff" maxWidth="Infinity" maxHeight="Infinity"/>
+                <Button text="Plug ON" fx:id="plugOnBtn" onAction="#handlePlugOn" maxWidth="Infinity" maxHeight="Infinity" styleClass="on-button"/>
+                <Button text="Plug OFF" fx:id="plugOffBtn" onAction="#handlePlugOff" maxWidth="Infinity" maxHeight="Infinity" styleClass="off-button"/>
             </HBox>
             <HBox spacing="10">
                 <Label text="Lamp Status:" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
-                <Label fx:id="lampStatusLabel" text="Unknown" style="-fx-font-size:20px;"/>
+                <Label fx:id="lampStatusLabel" text="OFF" style="-fx-font-size:20px;"/>
             </HBox>
             <ImageView fx:id="lampImageView" fitWidth="250" fitHeight="250" preserveRatio="true"/>
             <HBox spacing="10">
                 <Label text="Plug Status:" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
-                <Label fx:id="plugStatusLabel" text="Unknown" style="-fx-font-size:20px;"/>
+                <Label fx:id="plugStatusLabel" text="OFF" style="-fx-font-size:20px;"/>
             </HBox>
             <ImageView fx:id="plugImageView" fitWidth="200" fitHeight="200" preserveRatio="true"/>
         </VBox>

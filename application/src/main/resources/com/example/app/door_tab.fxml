@@ -7,7 +7,7 @@
         <VBox spacing="20">
             <HBox spacing="20">
                 <Label text="Door Status:" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
-                <Label fx:id="doorStatusLabel" text="Unknown" style="-fx-font-size:20px;"/>
+                <Label fx:id="doorStatusLabel" text="CLOSED" style="-fx-font-size:20px;"/>
             </HBox>
             <ImageView fx:id="doorImageView" fitWidth="500" fitHeight="350" preserveRatio="true"/>
             <Label text="Door Event History:" style="-fx-font-size:20px; -fx-font-weight:bold;"/>

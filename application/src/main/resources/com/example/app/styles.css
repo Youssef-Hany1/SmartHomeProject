@@ -1,63 +1,54 @@
 /* General Styles */
 .root {
-    -fx-background-color: #f0f2f5; /* Light gray background */
+    -fx-background-color: #e8eaf6; /* Light blue-gray */
     -fx-font-family: "Arial";
 }
 
 .title-label {
-    -fx-font-size: 24px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
     -fx-text-fill: #2c3e50; /* Dark blue-gray */
 }
 
 .section-title {
-    -fx-font-size: 16px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-text-fill: #34495e; /* Medium dark gray */
 }
 
 .status-label {
-    -fx-font-size: 16px;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #27ae60; /* Green color for status */
-}
-
-.separator {
-    -fx-background-color: #bdc3c7; /* Light gray */
-    -fx-padding: 5 0 5 0;
+    -fx-text-fill: #2c3e50; /* Neutral dark text */
 }
 
 /* Buttons */
 .button {
-    -fx-font-size: 14px;
-    -fx-padding: 10 20;
-    -fx-background-radius: 5;
+    -fx-font-size: 16px; /* Increased font size */
+    -fx-padding: 10 20; /* Enlarged buttons with more padding */
+    -fx-background-radius: 10;
     -fx-text-fill: white;
 }
 
 .on-button {
-    -fx-background-color: #4CAF50; /* Green */
+    -fx-background-color: #4CAF50; /* Green for ON buttons */
 }
 
 .on-button:hover {
-    -fx-background-color: #45a049;
+    -fx-background-color: #45a049; /* Darker green on hover */
 }
 
 .off-button {
-    -fx-background-color: #E74C3C; /* Red */
+    -fx-background-color: #E74C3C; /* Red for OFF buttons */
 }
 
 .off-button:hover {
-    -fx-background-color: #c0392b;
-}
-
-.label {
-    -fx-text-fill: #333333;
+    -fx-background-color: #c0392b; /* Darker red on hover */
 }
 
 /* Image View */
 .image-view {
     -fx-border-color: #dcdcdc;
-    -fx-border-width: 2;
-    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
 }
