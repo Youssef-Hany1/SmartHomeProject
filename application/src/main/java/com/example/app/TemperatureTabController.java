@@ -26,7 +26,7 @@ public class TemperatureTabController {
 
     //private UARTManager uartManager;
     private boolean alarmOn = false;
-    private double currentTemperature = 25.0;
+    private double currentTemperature = 21.0;
 
     // Separate stage for the alarm window
     private Stage alarmStage;

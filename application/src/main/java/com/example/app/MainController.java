@@ -20,6 +20,8 @@ public class MainController {
     private Thread uartReadThread;
     private final BlockingQueue<Character> dataQueue = new LinkedBlockingQueue<>();
 
+    private StringBuilder messageBuffer = new StringBuilder();
+
     @FXML
     public void initialize() {
         Platform.runLater(this::findControllersAndStartUART);
@@ -74,31 +76,65 @@ public class MainController {
     }
 
     private void processUARTMessage(char receivedChar) {
-        Platform.runLater(() -> {
-            switch (receivedChar) {
-                case '0':
-                    lampController.updateLampStatus('0');
-                    break;
-                case '1':
-                    lampController.updateLampStatus('1');
-                    break;
-                case '2':
-                    doorController.updateDoorStatus('2');
-                    break;
-                case '3':
-                    doorController.updateDoorStatus('3');
-                    break;
-                case '4':
-                    temperatureController.setAlarm(false);
-                    break;
-                case '5':
-                    temperatureController.setAlarm(true);
-                    break;
-                default:
-                    System.out.println("Unknown data received: " + receivedChar);
-            }
-        });
+        if (receivedChar == '#') {
+            // End of message
+            String message = messageBuffer.toString().trim();
+            messageBuffer.setLength(0); // Clear the buffer
+
+            // Process the full message
+            handleFullMessage(message);
+        } else if (messageBuffer.length() == 0 && isSingleCharacterCommand(receivedChar)) {
+            // Single-character commands should not be part of the buffer
+            handleFullMessage(String.valueOf(receivedChar));
+        } else {
+            // Append the character to the buffer for multi-character messages
+            messageBuffer.append(receivedChar);
+        }
     }
+
+    private boolean isSingleCharacterCommand(char c) {
+        // Define valid single-character commands
+        return c == 'a' || c == 'b' || c == 'c' || c == 'd' || c == 'e' || c == 'f';
+    }
+
+
+
+
+    private void handleFullMessage(String message) {
+        if (message.startsWith("t_")) {
+            // Temperature data: t_XX.X#
+            try {
+                String tempString = message.substring(2); // Remove "t_"
+                double temperature = Double.parseDouble(tempString);
+                Platform.runLater(() -> temperatureController.updateTemperature(temperature));
+            } catch (NumberFormatException e) {
+                System.err.println("Invalid temperature format: " + message);
+            }
+        } else if (message.equals("a")) {
+            // Lamp ON
+            Platform.runLater(() -> lampController.updateLampStatus('a'));
+        } else if (message.equals("b")) {
+            // Lamp OFF
+            Platform.runLater(() -> lampController.updateLampStatus('b'));
+        } else if (message.equals("c")) {
+            // Door OPEN
+            Platform.runLater(() -> doorController.updateDoorStatus('c'));
+        } else if (message.equals("d")) {
+            // Door CLOSED
+            Platform.runLater(() -> doorController.updateDoorStatus('d'));
+        } else if (message.equals("e")) {
+            // Alarm OFF
+            Platform.runLater(() -> temperatureController.setAlarm(false));
+        } else if (message.equals("f")) {
+            // Alarm ON
+            Platform.runLater(() -> temperatureController.setAlarm(true));
+        } else {
+            // Log unexpected or malformed messages
+            System.err.println("Unknown or malformed message: " + message);
+        }
+    }
+
+
 
     public void stop() {
         if (uartReadThread != null && uartReadThread.isAlive()) {

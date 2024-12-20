@@ -67,7 +67,7 @@ public class LampTabController {
     public void updateLampStatus(char status) {
         System.out.println(status);
         // status: '0' = off, '1' = on
-        boolean isOn = (status == '1');
+        boolean isOn = (status == 'b');
         String text = isOn ? "ON" : "OFF";
         javafx.application.Platform.runLater(() -> {
             lampStatusLabel.setText(text);

@@ -23,7 +23,7 @@ public class DoorTabController {
     private VBox doorRoot;
 
     private UARTManager uartManager;
-    private char lastDoorStatus = '2'; // Assume closed initially
+    private char lastDoorStatus = 'c'; // Assume closed initially
 
     @FXML
     public void initialize() {
@@ -37,7 +37,7 @@ public class DoorTabController {
 
     public void updateDoorStatus(char status) {
         // '2' = closed, '3' = open
-        boolean isOpen = (status == '3');
+        boolean isOpen = (status == 'd');
         String text = isOpen ? "OPEN" : "CLOSED";
 
         javafx.application.Platform.runLater(() -> {
