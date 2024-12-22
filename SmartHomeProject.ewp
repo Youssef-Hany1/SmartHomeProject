@@ -2115,12 +2115,6 @@
         <name>$PROJ_DIR$\DOOR_SWITCH_LAMP.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\..\SYS_TICK\LED.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\..\SYS_TICK\LED.h</name>
-    </file>
-    <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
