@@ -51,6 +51,10 @@ public class DoorTabController {
                         new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()),
                         isOpen ? "OPENED" : "CLOSED");
                 doorEventsList.getItems().add(event);
+
+                // Scroll to the bottom of the list
+                doorEventsList.scrollTo(doorEventsList.getItems().size() - 1);
+
                 lastDoorStatus = status;
             }
         });

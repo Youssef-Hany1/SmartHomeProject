@@ -12,6 +12,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
+import javafx.scene.paint.Color;
+
 
 public class TemperatureTabController {
 
@@ -85,6 +87,7 @@ public class TemperatureTabController {
 
             Label tempLabel = new Label("Current Temp: " + temp + " °C");
             tempLabel.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+            tempLabel.setTextFill(Color.RED);  // Set the text color to red
 
             VBox layout = new VBox(20, alarmImg, tempLabel);
             layout.setStyle("-fx-padding: 20; -fx-alignment: center;");
