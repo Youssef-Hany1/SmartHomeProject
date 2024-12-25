@@ -1,4 +1,4 @@
-"C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SYS_TICK\SYS_TICK_program.c"
+"C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\MCAL\SYS_TICK_program.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
@@ -9,7 +9,7 @@ C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COU
 -o
 C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\Debug\BrowseInfo\MCAL\SYS_TICK_program.pbi
 -I
-C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SYS_TICK
+C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\MCAL
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295
 -I

@@ -5,161 +5,96 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\Debug\Obj\HAL\DOOR_SWITCH_LAMP.o</file>
-            <file>$PROJ_DIR$\MCAL\ADC.c</file>
-            <file>$PROJ_DIR$\MCAL\UART.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\HAL\BUZZER.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\MCAL\UART.o</file>
-            <file>$PROJ_DIR$\MCAL\UART.h</file>
-            <file>$PROJ_DIR$\MCAL\DIO.h</file>
-            <file>$PROJ_DIR$\MCAL\SYS_TICK_interface.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\MCAL\ADC.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\MCAL\DIO.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\HAL\RELAY.o</file>
-            <file>$PROJ_DIR$\MCAL\ADC.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\APP\main.o</file>
-            <file>$PROJ_DIR$\MCAL\DIO.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\MCAL\SYS_TICK_program.o</file>
-            <file>$PROJ_DIR$\MCAL\SYS_TICK_program.c</file>
             <file>$PROJ_DIR$\UTILES_LIB\BIT_WISE_OPS.h</file>
             <file>$PROJ_DIR$\UTILES_LIB\STD_TYPES.h</file>
             <file>$PROJ_DIR$\APP\main.c</file>
-            <file>$PROJ_DIR$\HAL\BUZZER.h</file>
-            <file>$PROJ_DIR$\HAL\RELAY.c</file>
-            <file>$PROJ_DIR$\HAL\DOOR_SWITCH_LAMP.c</file>
+            <file>$PROJ_DIR$\HAL\DOOR.h</file>
             <file>$PROJ_DIR$\HAL\SWITCH_LAMP.h</file>
             <file>$PROJ_DIR$\HAL\RELAY.h</file>
-            <file>$PROJ_DIR$\HAL\DOOR.h</file>
+            <file>$PROJ_DIR$\MCAL\ADC.c</file>
+            <file>$PROJ_DIR$\MCAL\ADC.h</file>
+            <file>$PROJ_DIR$\HAL\DOOR_SWITCH_LAMP.c</file>
             <file>$PROJ_DIR$\HAL\BUZZER.c</file>
-            <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\BUZZER.c</file>
-            <file>$PROJ_DIR$\ADC.c</file>
-            <file>$PROJ_DIR$\BUZZER.h</file>
-            <file>$PROJ_DIR$\DIO.h</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\BIT_WISE_OPS.h</file>
-            <file>$PROJ_DIR$\DIO.c</file>
-            <file>$PROJ_DIR$\ADC.h</file>
-            <file>$PROJ_DIR$\DOOR.h</file>
-            <file>$PROJ_DIR$\DOOR_SWITCH_LAMP.c</file>
-            <file>$PROJ_DIR$\RELAY.c</file>
-            <file>$PROJ_DIR$\RELAY.h</file>
+            <file>$PROJ_DIR$\MCAL\DIO.c</file>
+            <file>$PROJ_DIR$\MCAL\DIO.h</file>
+            <file>$PROJ_DIR$\MCAL\SYS_TICK_interface.h</file>
+            <file>$PROJ_DIR$\MCAL\SYS_TICK_program.c</file>
+            <file>$PROJ_DIR$\MCAL\UART.c</file>
+            <file>$PROJ_DIR$\HAL\RELAY.c</file>
+            <file>$PROJ_DIR$\HAL\BUZZER.h</file>
+            <file>$PROJ_DIR$\MCAL\UART.h</file>
             <file>$PROJ_DIR$\..\SYS_TICK\startup_ewarm.c</file>
-            <file>$PROJ_DIR$\Debug\Exe\SmartHomeProject.out</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_nvic.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_ewarm.o</file>
-            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
-            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\STD_TYPES.h</file>
             <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_interface.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h</file>
-            <file>$PROJ_DIR$\Debug\List\SmartHomeProject.map</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\tm4c123gh6pm.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\MCAL\ADC.o</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\HAL\BUZZER.o</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\BIT_WISE_OPS.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_ewarm.o</file>
+            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
             <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$PROJ_DIR$\UART.c</file>
-            <file>$PROJ_DIR$\SWITCH_LAMP.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\HAL\DOOR_SWITCH_LAMP.o</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_types.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\APP\main.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\MCAL\SYS_TICK_program.o</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_interface.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\MCAL\UART.o</file>
+            <file>$PROJ_DIR$\Debug\List\SmartHomeProject.map</file>
+            <file>$PROJ_DIR$\Debug\Obj\MCAL\DIO.o</file>
             <file>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</file>
-            <file>$PROJ_DIR$\UART.h</file>
-            <file>$PROJ_DIR$\..\SYS_TICK\STD_TYPES.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\SmartHomeProject.out</file>
+            <file>$PROJ_DIR$\..\SYS_TICK\tm4c123gh6pm.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\..\..\..\..\ti\TivaWare_C_Series-2.2.0.295\inc\hw_nvic.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\HAL\RELAY.o</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\MCAL\ADC.c</name>
+            <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
-                    <name>ICCARM</name>
-                    <file> 8</file>
+                    <name>ILINK</name>
+                    <file> 46 43</file>
                 </tool>
             </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 11 17 49</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\MCAL\UART.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 4</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 5 17 49</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\MCAL\DIO.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 9</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 6 16 17 49</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\MCAL\SYS_TICK_program.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 14</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 44 7 16 17 49</file>
-                </tool>
-            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\APP\main.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 12</file>
+                    <file> 39</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 59 50 52 44 58 66 65 43 19 24 23 22 11 6 7 5 17 49</file>
+                    <file> 33 36 23 29 32 19 20 50 16 3 5 4 7 11 12 17 1 31</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\HAL\RELAY.c</name>
+            <name>$PROJ_DIR$\MCAL\ADC.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 10</file>
+                    <file> 24</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 23 6 17 49</file>
+                    <file> 7 1 31</file>
                 </tool>
             </inputs>
         </file>
@@ -168,13 +103,13 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 0</file>
+                    <file> 34</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 24 22 6 16 17 49</file>
+                    <file> 3 4 11 0 1 31</file>
                 </tool>
             </inputs>
         </file>
@@ -183,13 +118,73 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 3</file>
+                    <file> 26</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 44 19 6 7 17 49</file>
+                    <file> 29 16 11 12 1 31</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MCAL\DIO.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 11 0 1 31</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MCAL\SYS_TICK_program.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29 12 0 1 31</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MCAL\UART.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 42</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 1 31</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\RELAY.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 52</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 5 11 1 31</file>
                 </tool>
             </inputs>
         </file>
@@ -198,13 +193,28 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 47</file>
+                    <file> 30</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 59 50 52 40 66 43 46 55</file>
+                    <file> 33 36 23 48 19 50 49 37</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29 27 21 41 47</file>
                 </tool>
             </inputs>
         </file>
@@ -213,37 +223,13 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 56</file>
+                    <file> 43</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 51 45 48 53 41 12 3 0 10 8 9 14 4 47 42</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>[ROOT_NODE]</name>
-            <outputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 39 56</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\SYS_TICK\SYS_TICK_program.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 14</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 44 31 64 54 57</file>
+                    <file> 22 51 25 38 35 39 26 34 52 24 44 40 42 30 28</file>
                 </tool>
             </inputs>
         </file>

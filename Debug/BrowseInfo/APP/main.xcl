@@ -1,4 +1,4 @@
-"C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\main.c"
+"C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\APP\main.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
@@ -9,7 +9,7 @@ C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COU
 -o
 C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\Debug\BrowseInfo\APP\main.pbi
 -I
-C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject
+C:\Users\Asus\OneDrive - Faculty of Engineering Ain Shams University\Desktop\COURSES\Senior-1\Semester 7\CSE211 Intro to ES\ARM_Workspace\SmartHomeProject\APP
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295
 -I
